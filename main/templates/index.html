@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -112,7 +113,13 @@
         </ul>
       </div>
       <section class="about">
-        <div class="about__slider"></div>
+        <div class="about__slider">
+            {% for photo in slider_photo %}
+            <div class="about__slider-item">
+                <img src="{{ photo.image.url }}" alt="">
+            </div>
+            {% endfor %}
+        </div>
         <div class="about__overlay">
           <header>
             <div class="container">
@@ -131,40 +138,22 @@
                   <div class="header__social">
                     <p class="header__social-text animationCircle">Пишите, мы онлайн</p>
                     <ul class="header__social-list">
+                        {% for account in social_account %}
                       <li class="header__social-list-item">
-                        <a href="#">
-                          <img src="./img/icons/telegram.svg" alt="telegram" />
+                        <a href="">
+                          <img src="{{ account.image.url }}" alt="telegram" />
                         </a>
                       </li>
-                      <li class="header__social-list-item">
-                        <a href="#">
-                          <img src="./img/icons/tiktok.svg" alt="tiktok" />
-                        </a>
-                      </li>
-                      <li class="header__social-list-item">
-                        <a href="#">
-                          <img src="./img/icons/whatsapp.svg" alt="whatsapp" />
-                        </a>
-                      </li>
-                      <li class="header__social-list-item">
-                        <a href="#">
-                          <img src="./img/icons/youtube.svg" alt="youtube" />
-                        </a>
-                      </li>
-                      <li class="header__social-list-item">
-                        <a href="#">
-                          <img src="./img/icons/instagram.svg" alt="instagram" />
-                        </a>
-                      </li>
+                        {% endfor %}
                     </ul>
-                    <a href="tel:+375291234567">+7(968) 355-92-14</a>
+                    <a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a>
                   </div>
                   <div class="header__callback">
                     <div class="header__callback-text-wrap">
-                      <p class="header__callback-text animationCircle">ПН-ПТ</p>
-                      <p class="header__callback-text">с 10:00 до 18:00</p>
+                      <p class="header__callback-text animationCircle">{{ contact.working_days }}</p>
+                      <p class="header__callback-text">{{ contact.working_days }}</p>
                     </div>
-                    <a href="tel:+375291234567">+7 (968) 355-92-14</a>
+                    <a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a>
                     <p class="header__callback-btn">Заказать звонок</p>
                   </div>
                 </div>
@@ -1092,38 +1081,20 @@
                 <input type="tel" name="phone" id="" placeholder="Телефон" />
                 <button>Отправить</button>
                 <ul class="footer__list-social">
-                  <li>
-                    <a href="#">
-                      <img src="./img/icons/telegram.svg" alt="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./img/icons/tiktok.svg" alt="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./img/icons/whatsapp.svg" alt="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./img/icons/youtube.svg" alt="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="./img/icons/instagram.svg" alt="" />
-                    </a>
-                  </li>
+                  {% for account in social_account %}
+                      <li class="header__social-list-item">
+                        <a href="">
+                          <img src="{{ account.image.url }}" alt="telegram" />
+                        </a>
+                      </li>
+                  {% endfor %}
                 </ul>
               </form>
               <div class="footer__text">
-                <p class="footer__adress">ЗЕЛЕНОДОЛЬСК, ЛЕНИНА 61, 2 ЭТАЖ</p>
-                <p class="footer__working-time">С 9:00 ДО 17:00</p>
-                <a href="#" class="footer__email"> CNARBAT@MAIL.RU </a>
-                <p><span>Менеджер:</span> <a href="#">+7 (843) 717-86-75</a></p>
+                <p class="footer__adress">{{ contact.address}}{% if contact.floor %}, {{ contact.floor}}{% endif %}</p>
+                <p class="footer__working-time">{{ contact.working_hours }}</p>
+                <a href="#" class="footer__email"> {{ contact.email }} </a>
+                <p><span>Менеджер:</span> <a href="tel:{{ contact.phone_number }}">{{ contact.phone_number }}</a></p>
                 <a href="#" class="footer__adress-btn"> как к нам проехать </a>
               </div>
             </div>
