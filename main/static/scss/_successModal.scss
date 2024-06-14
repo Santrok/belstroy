@@ -1,0 +1,44 @@
+.success__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0,0,0, 0.5);
+  transform: scale(0);
+  transition: .3s ease;
+}
+
+.success__modal-wrapper {
+  background: #fff;
+  padding: 40px 40px;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.seccess__modal-img {
+    max-width:  48px;
+    max-height: 48px
+}
+
+.success__modal-text {
+    @include fonts("OpenSans", 400, 18px, 28px, $secondColor);
+    text-align: center;
+}
+
+
+.success__modal-active {
+    transition: .3s ease;
+    transform: scale(1);
+}
