@@ -12,12 +12,22 @@ class HousePlanPhoto(models.Model):
         return self.house.name
 
 
+class AdminHousePlanPhoto(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: HousePlanPhoto"""
+
+
 class HouseFacadePhoto(models.Model):
     photo = models.ImageField('Изображение фасада дома', upload_to='house_facade_photos')
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
 
     def __str__(self):
         return self.house.name
+
+
+class AdminHouseFacadePhoto(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: HouseFacadePhoto"""
 
 
 class HouseSectionPhoto(models.Model):
@@ -28,6 +38,11 @@ class HouseSectionPhoto(models.Model):
         return self.house.name
 
 
+class AdminHouseSectionPhoto(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: HouseSectionPhoto"""
+
+
 class HousePhoto(models.Model):
     photo = models.ImageField('Изображение', upload_to='house_photos')
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
@@ -36,11 +51,21 @@ class HousePhoto(models.Model):
         return self.house.name
 
 
+class AdminHousePhoto(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: HousePhoto"""
+
+
 class HouseType(models.Model):
     material = models.CharField('Материал стен', max_length=255)
 
     def __str__(self):
         return self.material
+
+
+class AdminHouseType(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: HouseType"""
 
 
 class House(models.Model):
@@ -55,9 +80,15 @@ class House(models.Model):
     main_photo = models.ImageField('Главное изображение', upload_to='house_main_photos', blank=True, null=True)
     cost_of_basic_equipment = models.CharField('Стоимость базовой комплектации', max_length=255, blank=True, null=True)
     building_materials_equipment = models.CharField("Стоимость стройматериалов", max_length=255, blank=True, null=True)
+    link_to_video_on_youtube = models.CharField("Ссылка на видео в YouTub", max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.name
+
+
+class AdminHouse(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: House"""
 
 
 class Contact(models.Model):

@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from rest_framework.decorators import api_view
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, Fact, InfoCompany, Partner
+from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, Fact, InfoCompany, Partner, HouseType, \
+    House
+from main.serializer import HouseTypeSerializer, HouseAllSerializer
 
 
 def get_main_page(request):
@@ -22,4 +26,13 @@ def get_main_page(request):
         "partners": partners,
     }
     return render(request, 'index.html', context)
-# Create your views here.
+
+
+class MaterialHouseAPIView(ListAPIView):
+    queryset = HouseType.objects.all()
+    serializer_class = HouseTypeSerializer
+
+
+class DetailHouseAPIView(RetrieveAPIView):
+    queryset = House.objects.all()
+    serializer_class = HouseAllSerializer

@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, InfoCompany, Fact, Partner
+from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, InfoCompany, Fact, Partner, HouseType, \
+    House, HousePlanPhoto, HouseFacadePhoto, HouseSectionPhoto, HousePhoto
 
 # Register your models here.
 admin.site.register(BackgroundSliderImage)
@@ -10,3 +11,9 @@ admin.site.register(Rating)
 admin.site.register(InfoCompany)
 admin.site.register(Fact)
 admin.site.register(Partner)
+admin.site.register(HouseType)
+admin.site.register(House)
+admin.site.register(HousePlanPhoto)
+admin.site.register(HouseFacadePhoto)
+admin.site.register(HouseSectionPhoto)
+admin.site.register(HousePhoto)
