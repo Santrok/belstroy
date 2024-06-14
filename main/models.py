@@ -153,6 +153,11 @@ class SignUpForAFreeConsultation(models.Model):
         return f'{self.name} {self.date_of_consultation} {self.phone_number}'
 
 
+class AdminSignUpForAFreeConsultation(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: SignUpForAFreeConsultation"""
+
+
 class Fact(models.Model):
     title = models.CharField("Заголовок", max_length=255)
     fact_description = models.CharField("Текст", max_length=500)
@@ -189,6 +194,11 @@ class CallBack(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.phone_number}'
+
+
+class AdminCallBack(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: CallBack"""
 
 
 class BackgroundSliderImage(models.Model):

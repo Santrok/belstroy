@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from main.models import House, HouseType, HousePlanPhoto, HouseFacadePhoto, HouseSectionPhoto, HousePhoto
+from main.models import House, HouseType, HousePlanPhoto, HouseFacadePhoto, HouseSectionPhoto, HousePhoto, \
+    SignUpForAFreeConsultation, CallBack
 
 
 class HouseSerializer(serializers.ModelSerializer):
@@ -64,3 +65,17 @@ class HouseAllSerializer(serializers.ModelSerializer):
                   "building_materials_equipment", "link_to_video_on_youtube",
                   "houseplanphoto_set", "housefacadephoto_set", "housesectionphoto_set",
                   "housephoto_set"]
+
+
+class ConsultationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = SignUpForAFreeConsultation
+        fields = ["name", "phone_number", "date_of_consultation"]
+
+
+class CallBackSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CallBack
+        fields = ["name", "phone_number"]
