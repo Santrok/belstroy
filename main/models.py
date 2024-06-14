@@ -100,6 +100,11 @@ class Partner(models.Model):
         return self.title_partner
 
 
+class AdminPartner(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: Partner"""
+
+
 class Rating(models.Model):
     rating = models.CharField("Рейтинг", max_length=10)
 
@@ -125,6 +130,11 @@ class Fact(models.Model):
         return self.title
 
 
+class AdminFact(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: Fact"""
+
+
 class InfoCompany(models.Model):
     years_on_the_market = models.IntegerField("Лет на рынке недвижимости")
     satisfied_clients = models.IntegerField("Довольных клиентов")
@@ -133,6 +143,11 @@ class InfoCompany(models.Model):
 
     def __str__(self):
         return "Информация о компании"
+
+
+class AdminInfoCompany(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: InfoCompany"""
 
 
 class CallBack(models.Model):

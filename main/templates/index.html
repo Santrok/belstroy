@@ -85,31 +85,13 @@
           </div>
         </div>
         <ul class="social__list">
+        {% for account in social_account %}
           <li class="social__list-item">
-            <a href="#">
-              <img src="./img/icons/telegram.svg" alt="" />
+            <a href="{% if account.phone_number %} tel:{{ account.phone_number }} {% elif account.link %} {{ account.link }} {% endif %}">
+                <img src="{{ account.image.url }}" alt="{{ account.title_social_media }}" />
             </a>
           </li>
-          <li class="social__list-item">
-            <a href="#">
-              <img src="./img/icons/tiktok.svg" alt="" />
-            </a>
-          </li>
-          <li class="social__list-item">
-            <a href="#">
-              <img src="./img/icons/whatsapp.svg" alt="" />
-            </a>
-          </li>
-          <li class="social__list-item">
-            <a href="#">
-              <img src="./img/icons/youtube.svg" alt="" />
-            </a>
-          </li>
-          <li class="social__list-item">
-            <a href="#">
-              <img src="./img/icons/instagram.svg" alt="" />
-            </a>
-          </li>
+        {% endfor %}
         </ul>
       </div>
       <section class="about">
@@ -130,7 +112,7 @@
                 <div class="header__rating">
                   <div class="header__bookmark-img">
                     <img src="{% static "img/bookmark.png" %}" alt="bookmark" />
-                    <p>4.9</p>
+                    <p>{{ rating.rating }}</p>
                   </div>
                   <p>Рейтинг в яндексе</p>
                 </div>
@@ -140,8 +122,8 @@
                     <ul class="header__social-list">
                         {% for account in social_account %}
                       <li class="header__social-list-item">
-                        <a href="">
-                          <img src="{{ account.image.url }}" alt="telegram" />
+                        <a href="{% if account.phone_number %} tel:{{ account.phone_number }} {% elif account.link %} {{ account.link }} {% endif %}">
+                          <img src="{{ account.image.url }}" alt="{{ account.title_social_media }}" />
                         </a>
                       </li>
                         {% endfor %}
@@ -612,9 +594,10 @@
           <div class="faq__wrapper">
             <h2 class="faq__title">С НАМИ П<span>РОСТ</span>О</h2>
             <ul class="faq__list">
+                {% for fact in facts %}
               <li class="faq__list-item">
                 <footer class="faq__list-footer">
-                  <h3 class="faq__list-item-title">выбор проекта</h3>
+                  <h3 class="faq__list-item-title">{{ fact.title|upper }}</h3>
                   <div class="faq__list-item-cross">
                     <svg
                       fill="#736c46"
@@ -636,98 +619,11 @@
                 </footer>
                 <header class="faq__list-header">
                   <p class="faq__list-item-text">
-                    Наш архитектор спроектирует дом Вашей мечты или выберите проект из 1000 уже готовых и проверенных
-                    временем.
+                      {{ fact.fact_description }}
                   </p>
                 </header>
               </li>
-              <li class="faq__list-item">
-                <footer class="faq__list-footer">
-                  <h3 class="faq__list-item-title">покупка участка</h3>
-                  <div class="faq__list-item-cross">
-                    <svg
-                      fill="#736c46"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      id="plus"
-                      class="icon glyph"
-                      stroke="#736c46"
-                    >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                      <g id="SVGRepo_iconCarrier">
-                        <path
-                          d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
-                        ></path>
-                      </g>
-                    </svg>
-                  </div>
-                </footer>
-                <header class="faq__list-header">
-                  <p class="faq__list-item-text">
-                    Наши специалисты подберут участок, проверят возможность строительства и подключения коммуникаций,
-                    сопроводят сделку. При необходимости продадут вашу недвижимость или одобрят ипотеку
-                  </p>
-                </header>
-              </li>
-              <li class="faq__list-item">
-                <footer class="faq__list-footer">
-                  <h3 class="faq__list-item-title">договор подряда</h3>
-                  <div class="faq__list-item-cross">
-                    <svg
-                      fill="#736c46"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      id="plus"
-                      class="icon glyph"
-                      stroke="#736c46"
-                    >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                      <g id="SVGRepo_iconCarrier">
-                        <path
-                          d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
-                        ></path>
-                      </g>
-                    </svg>
-                  </div>
-                </footer>
-                <header class="faq__list-header">
-                  <p class="faq__list-item-text">
-                    Заключаем договор, в котором зафиксирована стоимость и сроки строительства, а также гарантийные
-                    обязательства
-                  </p>
-                </header>
-              </li>
-              <li class="faq__list-item">
-                <footer class="faq__list-footer">
-                  <h3 class="faq__list-item-title">Строительство</h3>
-                  <div class="faq__list-item-cross">
-                    <svg
-                      fill="#736c46"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      id="plus"
-                      class="icon glyph"
-                      stroke="#736c46"
-                    >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                      <g id="SVGRepo_iconCarrier">
-                        <path
-                          d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
-                        ></path>
-                      </g>
-                    </svg>
-                  </div>
-                </footer>
-                <header class="faq__list-header">
-                  <p class="faq__list-item-text">
-                    Строительство занимает от 3 до 6 месяцев. По желанию заказчика устанавливаются видеонаблюдение. По
-                    окончании подписание акта приема-передачи
-                  </p>
-                </header>
-              </li>
+                {% endfor %}
             </ul>
           </div>
         </div>
@@ -930,19 +826,19 @@
           <div class="info__company-wrapper">
             <ul class="info__company-list">
               <li class="info__company-list-item">
-                <h2>10</h2>
+                <h2>{{ company_info.years_on_the_market }}</h2>
                 <p>Лет на рынке недвижимости</p>
               </li>
               <li class="info__company-list-item">
-                <h2>9000</h2>
+                <h2>{{ company_info.satisfied_clients }}</h2>
                 <p>Довольных клиентов</p>
               </li>
               <li class="info__company-list-item">
-                <h2>330</h2>
+                <h2>{{ company_info.number_of_reviews }}</h2>
                 <p>Отзывов</p>
               </li>
               <li class="info__company-list-item">
-                <h2>60</h2>
+                <h2>{{ company_info.the_number_of_employees }}</h2>
                 <p>Профессиональных сотрудников</p>
               </li>
             </ul>
@@ -1021,51 +917,11 @@
           <div class="partners__wrapper">
             <h2 class="partners__title">Наши партнеры</h2>
             <ul class="partners__list">
+                {% for partner in partners %}
               <li class="partners__list-item">
-                <img src="./img/brand_1.png" alt="" />
+                <img src="{{ partner.image.url }}" alt="{{ partner.title_partner }}" />
               </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_2.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_3.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_4.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_5.png" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_6.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_7.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_8.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_9.png" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_10.png" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_11.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_12.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_13.webp" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_14.png" alt="" />
-              </li>
-              <li class="partners__list-item">
-                <img src="./img/brand_15.png" alt="" />
-              </li>
+                {% endfor %}
             </ul>
           </div>
         </div>
@@ -1083,8 +939,8 @@
                 <ul class="footer__list-social">
                   {% for account in social_account %}
                       <li class="header__social-list-item">
-                        <a href="">
-                          <img src="{{ account.image.url }}" alt="telegram" />
+                        <a href="{% if account.phone_number %} tel:{{ account.phone_number }} {% elif account.link %} {{ account.link }} {% endif %}">
+                          <img src="{{ account.image.url }}" alt="{{ account.title_social_media }}" />
                         </a>
                       </li>
                   {% endfor %}
@@ -1100,7 +956,7 @@
             </div>
             <div class="footer__bottom">
               <div class="footer__logo">
-                <img src="./img/logo.png" alt="" />
+                <img src="{% static "/img/logo.png" %}" alt="" />
               </div>
               <a href="#" class="footer__politic"> Политика конфиденциальности </a>
               <a href="#" class="footer__develop"> Разработка </a>
