@@ -1,0 +1,197 @@
+.footer {
+  background: url(../img/bg.jpg) no-repeat center / cover;
+  padding-top: 100px;
+}
+
+.footer__title {
+  @include fonts("OpenSans", 600, 50px, 50px, $mainColor);
+  margin-bottom: 30px;
+}
+
+.footer__text {
+  @include fonts("OpenSans", 400, 18px, 28px, $mainColor);
+  max-width: 350px;
+  margin-bottom: 40px;
+}
+
+.footer__form-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 100px;
+
+  & .footer__text {
+    margin: 0;
+  }
+}
+
+.footer__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0 1 460px;
+
+  & input {
+    @include fonts("OpenSans", 400, 18px, 1.55, $mainColor);
+    border-bottom: 1px solid $mainColor;
+    padding: 5px;
+    width: 100%;
+    background: none;
+    &::placeholder {
+      @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
+    }
+  }
+
+  & button {
+    @include fonts("OpenSans", 600, 18px, 1.55, $actionHoverColor);
+    transition: 0.3s ease;
+    padding: 5px 15px;
+    border: 2px solid $actionHoverColor;
+    background: none;
+    border-radius: 30px;
+    max-width: 215px;
+    text-transform: uppercase;
+
+    &:hover {
+      transition: 0.3s ease;
+      background: $actionHoverColor;
+      color: $secondColor;
+    }
+  }
+}
+
+.footer__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  & p {
+    @include fonts("OpenSans", 400, 18px, 28px, $mainColor);
+
+    & span {
+      text-transform: uppercase;
+    }
+    & a {
+      @include fonts("OpenSans", 400, 18px, 28px, $mainColor);
+    }
+  }
+}
+
+.footer__email {
+  @include fonts("OpenSans", 400, 18px, 28px, $mainColor);
+}
+
+.footer__adress-btn {
+  @include fonts("OpenSans", 600, 18px, 1.55, $actionHoverColor);
+  padding: 5px;
+  border: 2px solid $actionHoverColor;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 215px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  &:hover {
+    transition: 0.3s ease;
+    background: $actionHoverColor;
+    color: $secondColor;
+  }
+}
+
+.footer__list-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  & li {
+    & a {
+      display: block;
+      max-width: 30px;
+      max-height: 30px;
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid $mainColor;
+  margin-top: 80px;
+  gap: 20px;
+
+  & a {
+    display: block
+  }
+}
+
+.footer__logo {
+    max-width: 200px;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+.footer__politic {
+  @include fonts("OpenSans", 400, 18px, 1.55, $politicColor);
+}
+
+.footer__develop {
+  @include fonts("OpenSans", 400, 18px, 1.55, $mainColor);
+}
+
+@media (max-width: 992px) {
+    .footer__form-wrapper {
+        gap: 20px;
+    }
+
+    .footer__bottom {
+        flex-wrap: wrap;
+    }
+
+    .footer__politic {
+        font-size: 16px;
+    }
+
+    .footer__develop {
+        font-size: 16px;
+    }
+
+    .footer__title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .footer__text {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .footer__form {
+        & button {
+            font-size: 16px;
+        }
+    }
+
+    .footer__text {
+        & p {
+            font-size: 16px;
+        }
+    }
+
+    .footer__adress-btn {
+        font-size: 16px;
+    }
+
+    .footer__bottom {
+        margin-top: 40px;
+    }
+}

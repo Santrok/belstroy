@@ -1,0 +1,65 @@
+.main__title {
+    margin-top: 160px;
+    @include fonts("OpenSans", 600, 50px, 65px, $productTitleColor);
+    animation: smoothly 0.7s ease;
+    animation-iteration-count: 1;
+}
+
+.main__text {
+    @include fonts("OpenSans", 600, 18px, 1.55, $mainColor);
+    margin-top: 30px;
+    font-style: italic;
+    animation: smoothly 0.7s ease;
+    animation-iteration-count: 1;
+}
+
+.main__btn {
+    margin-top: 160px;
+    display: inline-block;
+    background: none;
+    @include fonts("OpenSans", 400, 18px, 1.55, $actionHoverColor);
+    border: 2px solid $actionHoverColor;
+    border-radius: 30px;
+    animation-name: consultationBtn;
+    animation-iteration-count: infinite;
+    transition: .2s ease;
+    text-align: center;
+    text-transform: uppercase;
+    animation-duration: 2s;
+    padding: 5px;
+    box-shadow: $boxShadow;
+    min-width: 300px;
+}   
+
+
+@keyframes consultationBtn {
+    0% {
+        transform: scale(1,1);
+    }
+
+    50% {
+        transform: scale(1.1,1.1);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+
+@media (max-width:992px) {
+    .main__title {
+        margin-top: 60px;
+        font-size: 40px;
+    }
+
+    .main__text {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    
+    .main__btn {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+}

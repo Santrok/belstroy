@@ -1,0 +1,155 @@
+.excursion {
+    background: url(../img/sa-44.jpeg) no-repeat center / cover;
+    margin-top: 100px;
+}
+
+.excursion__model-blur {
+    backdrop-filter: blur(6px);
+    position: relative;
+}
+.excursion__model-bg {
+    padding: 100px 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0.216turn, rgba(255, 255, 255, 0.96) 49%, rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1) 100%);;
+    background-position: center center;
+}
+
+.excursion__title {
+    @include fonts("OpenSans", 500, 50px, 65px, $secondColor);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    max-width: 1040px;
+    animation: display 0.7s ease;
+    animation-iteration-count: 1;
+    & span {
+        color: $actionHoverColor;
+        font-weight: 700;
+    }
+    margin-bottom: 30px;
+}
+
+.excursion__text {
+    @include fonts("OpenSans", 400, 18px, 1.55, $secondColor);
+    max-width: 600px;
+    margin-bottom: 30px;
+    animation: display 0.7s ease;
+    animation-iteration-count: 1;
+}
+
+@keyframes display {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.excursion__text-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 60px;
+    animation: display 0.7s ease;
+    animation-iteration-count: 1;
+
+    & li {
+        @include fonts("OpenSans", 400, 18px, 1.55, $secondColor);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 7.5px;
+            height: 7.5px;
+            background: $secondColor;
+            border-radius: 50%;
+        }
+
+        & span {
+            font-weight: 700;
+        }
+    }
+}
+
+.excursion__form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    & input {
+        @include fonts("OpenSans", 400, 18px, 1.55, $defaultColor);
+        border-bottom: 1px solid $secondColor;
+        padding: 5px;
+        width: 100%;
+        max-width: 270px;
+        background: none;
+        &::placeholder {
+          @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
+        }
+      }
+    
+      & button {
+        padding: 5px 15px;
+        border-radius: 30px;
+        width: 100%;
+        max-width: 215px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $actionHoverColor;
+        transition: 0.3s ease;
+        @include fonts("OpenSans", 400, 18px, 1.55, $defaultColor);
+        text-transform: uppercase;
+        &:hover {
+          transition: 0.3s ease;
+          background: $btnSubmitHover;
+          color: $actionHoverColor;
+        }
+      }
+}
+
+@media (max-width:992px) {
+    .excursion__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .excursion__form {
+        flex-direction: column;
+        gap: 30px;
+
+        & input {
+            max-width: none;
+        }
+    }
+
+    .excursion__text-list  {
+        & li {
+            flex-wrap: wrap;
+            font-size: 16px;
+        }
+    }
+
+    .excursion__text {
+        font-size: 16px;
+    }
+
+    .excursion__form {
+        & input {
+            font-size: 16px;
+        }
+    }
+
+    .excursion__model-bg  {
+        padding: 50px 0;
+    }
+
+    .excursion {
+        margin-top: 50px;
+    }
+}

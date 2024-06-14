@@ -1,0 +1,120 @@
+.custom__project {
+  padding: 165px 0;
+}
+
+.custom__project-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.custom__project-img-wrap {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  flex: 1 0 460px;
+  align-items: center;
+}
+
+.custom__project-img {
+  max-width: 260px;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &:first-child {
+    height: 100%;
+    flex: 0 0 360px;
+  }
+
+  &:last-child {
+    bottom: -140px;
+    left: 100px;
+    position: absolute;
+    width: 100%;
+    max-width: 280px;
+    & img {
+      max-height: 174px;
+    }
+  }
+}
+
+.custom__project-title {
+  @include fonts("OpenSans", 600, 50px, 1.23, $secondColor);
+  margin-bottom: 34px;
+}
+
+.custom__project-text {
+  margin-bottom: 60px;
+  @include fonts("OpenSans", 400, 18px, 1.55, $secondColor);
+}
+
+.custom__project-btn {
+  display: block;
+  @include fonts("OpenSans", 600, 18px, 1.55, $secondColor);
+  text-transform: uppercase;
+  background: $actionHoverColor;
+  padding: 10px;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+  &:hover {
+    transition: 0.5s ease;
+    background: $secondColor;
+    color: $actionHoverColor;
+  }
+}
+
+@media (max-width: 992px) {
+  .custom__project-wrapper {
+    flex-direction: column;
+  }
+
+  .custom__project-img {
+    width: 100%;
+    &:first-child {
+      flex: 1 1 auto;
+    }
+    &:last-child {
+      flex: 1 1 auto;
+      max-width: initial;
+      position: initial;
+      & img {
+        max-height: initial;
+      }
+    }
+
+    width: initial;
+    height: 100%;
+    max-width: initial;
+  }
+
+  .custom__project-img-wrap {
+    flex: initial;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .custom__project-title {
+    font-size: 32px;
+  }
+
+  .custom__project-text {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .custom__project-btn {
+    font-size: 14px;
+    max-width: none;
+  }
+
+  .custom__project {
+    padding: 80px 0;
+  }
+}

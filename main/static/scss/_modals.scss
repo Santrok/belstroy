@@ -1,0 +1,53 @@
+.modals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow: auto;
+    padding: 65px 40px 40px;
+    background: #fff;
+    transform: scale(0);
+    transition: .3s ease;
+
+}
+
+.review__modal {
+    transform: scale(0);
+    flex-direction: column;
+}
+
+.cross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 43px;
+    width: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review__modal-author {
+    @include fonts("OpenSans", 400, 18px, 1.17, $actionHoverColor);
+    margin-bottom: 7px;
+}
+
+.review__modal-expert-city {
+    @include fonts("OpenSans", 400, 16px, 1.45, $secondColor);
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.review__modal-text {
+    @include fonts("OpenSans", 400, 18px, 1.45, $secondColor);
+}
+
+.modals__active {
+    transform: scale(1);
+    transition: .3s ease;
+}
+
+
+@import "./politicsModal";

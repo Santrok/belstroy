@@ -1,0 +1,132 @@
+.main__nav {
+  margin-top: 20px;
+}
+.main__nav-logo {
+  display: none;
+  max-width: 130px;
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.main__nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: smoothly 0.7s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes smoothly {
+ 0% {
+  transform: translateY(1000%);
+  opacity: 0;
+ }
+ 100% {
+  transform: translateY(0);
+  opacity: 1
+ }
+}
+
+.main__nav-list-item {
+  & a {
+    @include fonts("OpenSans", 400, 18px, 1.55, $mainColor);
+    transition: 0.3s ease;
+
+    &:hover {
+      transition: 0.3s ease;
+      color: $actionHoverColor;
+    }
+  }
+}
+
+.main__nav-list-social {
+  display: none;
+}
+
+.main__nav-phone {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .main__nav {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background: $secondColor;
+    z-index: 10;
+  }
+
+  .main__nav-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main__nav-list-wrapper {
+    position: fixed;
+    top: 89px;
+    left: 0;
+    background: $secondColor;
+    width: 100%;
+    padding-bottom: 45px;
+    transform: scale(0);
+    transition: .3s ease;
+  }
+
+  .main__nav-list-item {
+    & a {
+      font-size: 16px;
+    }
+  }
+
+  .main__nav-logo {
+    display: block;
+  }
+
+  .main__nav-burger {
+    display: block;
+  }
+
+  .main__nav-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main__nav-list-social {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .main__nav-phone {
+    margin-top: 20px;
+    @include fonts("OpenSans", 600, 14px, 1.55, $actionHoverColor);
+    border: 2px solid $actionHoverColor;
+    border-radius: 30px;
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 195px;
+    text-align: center;
+    display: inline;
+  }
+}
+
+
+.main__nav-active {
+  transform: scale(1);
+  transition: .3s ease
+}
+
+@import './burger';

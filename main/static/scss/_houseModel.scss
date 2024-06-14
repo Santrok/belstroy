@@ -1,0 +1,179 @@
+.house__model {
+  background: url(../img/sa-44.jpeg) no-repeat center / cover;
+}
+
+.house__model-bg {
+  background: #fff;
+  opacity: 0.9;
+  background-position: center center;
+  padding: 100px 0;
+}
+
+.house__model-blur {
+  backdrop-filter: blur(6px);
+}
+
+.house__model__title {
+  @include fonts("OpenSans", 600, 50px, 65px, $secondColor);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  max-width: 805px;
+
+  & span {
+    color: $actionHoverColor;
+  }
+}
+
+.house__model-text-venok-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 10px 30px;
+  flex-wrap: wrap-reverse;
+}
+
+.house__model-venok-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px 60px;
+  flex: 0 0 640px;
+  padding-left: 40px;
+}
+
+.house__model-venok {
+  background: url(../img/lavrovyy-venok.jpeg) no-repeat center / 272px;
+  flex: 0 0 272px;
+  height: 272px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  & p {
+    text-align: center;
+    @include fonts("OpenSans", 400, 18px, 1.55, $secondColor);
+
+    & span {
+      font-size: 50px;
+    }
+  }
+}
+
+.house__model-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  & p {
+    @include fonts("OpenSans", 400, 18px, 1.55, $secondColor);
+    max-width: 380px;
+  }
+}
+
+.house__model-social-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  & li {
+    & a {
+      display: block;
+      max-width: 35px;
+      max-height: 35px;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.house__model-form {
+  display: flex;
+  align-items: center;
+  gap: 10px 40px;
+  flex-wrap: wrap;
+
+  & input {
+    @include fonts("OpenSans", 400, 18px, 1.55, $defaultColor);
+    border-bottom: 1px solid $secondColor;
+    padding: 5px;
+    width: 100%;
+    background: none;
+    max-width: 325px;
+    &::placeholder {
+      @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
+    }
+  }
+
+  & button {
+    padding: 5px 15px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 215px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $actionHoverColor;
+    transition: 0.5s ease;
+    @include fonts("OpenSans", 400, 18px, 1.55, $defaultColor);
+    text-transform: uppercase;
+    &:hover {
+      transition: 0.5s ease;
+      background: $btnSubmitHover;
+      color: $actionHoverColor;
+    }
+  }
+}
+.politic {
+  margin-top: 15px;
+  @include fonts("OpenSans", 400, 14px, 1.55, $secondColor);
+
+  & a {
+    color: $actionHoverColor;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .house__model-bg {
+    padding: 50px 0;
+  }
+
+  .house__model-text-wrap {
+    gap: 15px;
+
+    & p {
+      font-size: 16px;
+    }
+  }
+  .house__model__title {
+    font-size: 32px;
+    line-height: 50px;
+  }
+
+  .house__model-venok-wrap {
+    padding-left: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex: initial;
+  }
+  .house__model-text-venok-wrap {
+    justify-content: center;
+  }
+
+  .house__model-form {
+    justify-content: center;
+    gap: 30px;
+    & input {
+      max-width: none;
+      font-size: 16px;
+    }
+  }
+
+  .politic{
+    margin-top: 20px;
+  }
+}

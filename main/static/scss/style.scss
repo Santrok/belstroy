@@ -1,0 +1,20 @@
+@import './mixins';
+@import './variables';
+@import './container';
+@import './modals';
+@import './about';
+@import './main';
+@import './houseModel';
+@import './excursion';
+@import './customProject';
+@import './faq';
+@import './steps';
+@import './infoCompany';
+@import './reviews';
+@import './partners';
+@import './footer';
+@import './social';
+
+html {
+    scroll-behavior: smooth;
+}

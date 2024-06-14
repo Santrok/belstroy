@@ -1,0 +1,20 @@
+
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-track {
+    display: flex;
+}
+
+.about__slider-item {
+    & img {
+        max-height: 950px;
+        min-height: 650px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}

@@ -1,0 +1,388 @@
+.projects__details-about-img-wrap {
+  flex: 0 1 710px;
+}
+
+.projects__details-price {
+  flex: 0 1 350px;
+}
+
+.projects__details-about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.projects__details-about-img {
+  margin-bottom: 20px;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.projects__details-about-img-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  & li {
+    max-width: 160px;
+    cursor: pointer;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.projects__details-block-back {
+  @include fonts("OpenSans", 400, 18px, 1.55, $productTitleColor);
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.projects__details-title {
+  @include fonts("OpenSans", 600, 42px, 1.2, $detailsTitleColor);
+  margin-bottom: 40px;
+}
+
+.projects__details-options-list {
+  display: flex;
+  flex-direction: column;
+
+  & li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-top: 1px solid $detailsBorderColor;
+    & h3 {
+      @include fonts("OpenSans", 600, 16px, 1.55, $defaultColor);
+    }
+
+    & p {
+      max-width: 85px;
+      word-break: auto-phrase;
+      @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
+    }
+  }
+}
+
+.projects__details-prices {
+  padding: 10px 0 30px 0;
+  border-top: 1px solid $defaultColor;
+  border-bottom: 1px solid $defaultColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projects__details-price-text {
+  @include fonts("OpenSans", 700, 16px, 1.55, $defaultColor);
+  max-width: 200px;
+}
+
+.projects__details-price-value {
+  @include fonts("OpenSans", 700, 16px, 1.55, $defaultColor);
+}
+
+.projects__details-actions {
+  margin-top: 40px;
+  display: flex;
+  align-items: stretch;
+  gap: 15px;
+
+  & a {
+    display: block;
+    padding: 11px 18px;
+    background: $productTitleColor;
+    @include fonts("OpenSans", 600, 14px, 1.55, $mainColor);
+    transition: 0.3s ease;
+
+    &:hover {
+      transition: 0.3s ease;
+      background: $btnMoreHover;
+    }
+  }
+
+  & button {
+    border: 1px solid $productTitleColor;
+    padding: 11px 18px;
+    transition: 0.3s ease;
+    @include fonts("OpenSans", 600, 14px, 1.55, $productTitleColor);
+    background: none;
+    flex: 1 1 auto;
+
+    &:hover {
+      transition: 0.3s ease;
+      background: $productTitleColor;
+      color: $mainColor;
+    }
+  }
+}
+
+.projects__details-scheme-nav {
+  margin-bottom: 40px;
+}
+
+.projects__details-nav-scheme-list {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  border-bottom: 1px solid $borderColor;
+  padding-bottom: 15px;
+
+  & li {
+    @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
+    cursor: pointer;
+    position: relative;
+  }
+  & .projects__details-nav-scheme-list-item-active {
+    font-weight: 700;
+  }
+}
+
+.projects__details-nav-scheme-list-item-active {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: $productTitleColor;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+  }
+}
+
+.projects__details-scheme-img {
+  padding: 40px 50px 60px;
+  border: 1px solid $detailsBorderColor;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.projects__details-scheme-button-download {
+  border: 1px solid $productTitleColor;
+  padding: 11px 18px;
+  transition: 0.3s ease;
+  @include fonts("OpenSans", 600, 14px, 1.55, $productTitleColor);
+  background: none;
+  width: 100%;
+  max-width: 270px;
+  margin: 100px auto 0 auto;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    transition: 0.3s ease;
+    background: $productTitleColor;
+    color: $mainColor;
+  }
+}
+
+.projects__details-cost {
+  margin-top: 80px;
+}
+
+.projects__details-cost-title {
+  @include fonts("OpenSans", 700, 52px, 1.55, $defaultColor);
+  margin-bottom: 20px;
+}
+
+.projects__details-cost-list {
+  flex: 1 1 auto;
+}
+
+.projects__details-cost-list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects__details-cost-list-item-price-chevron {
+  & path {
+    fill: #000;
+  }
+}
+
+.projects__details-cost-block {
+  display: flex;
+  gap: 160px;
+  position: relative;
+}
+
+.projects__details-cost-calculation {
+  flex: 0 1 330px;
+  background: $detailsCalcBg;
+  padding: 25px 25px 30px;
+}
+
+.projects__details-cost-list-item-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  & h4 {
+    @include fonts("OpenSans", 700, 16px, 1.55, $defaultColor);
+  }
+
+  & h5 {
+    @include fonts("OpenSans", 400, 14px, 1.55, $defaultColor);
+  }
+
+  & input {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.projects__details-cost-list-item-price-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  & p {
+    @include fonts("OpenSans", 700, 16px, 1.55, $defaultColor);
+  }
+}
+
+.projects__details-cost-list-item-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid $defaultColor;
+  cursor: pointer;
+}
+
+.projects__details-cost-calculation-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $detailsTitleColor;
+  margin-bottom: 20px;
+
+  & p {
+    &:first-child {
+      @include fonts("OpenSans", 400, 20px, 1.55, $defaultColor);
+    }
+
+    &:last-child {
+      @include fonts("OpenSans", 700, 20px, 1.55, $defaultColor);
+    }
+  }
+}
+
+.projects__details-cost-calculation-choice-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+
+    & label {
+        display: flex;
+        align-items: center;
+        gap:15px;
+
+        & p {
+            @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
+        }
+
+        & input {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.projects__details-cost-calculation-field-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    & input {
+        padding: 11px 18px;
+        @include fonts("OpenSans", 500, 14px, 1.25, $detailsTitleColor);
+        
+        &::placeholder {
+            @include fonts("OpenSans", 600, 14px, 1.25, gray);
+        }
+    }
+}
+
+.project__details-cost-calculagtion-social-choice-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 35px;
+
+    & label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    & input {
+        width: 20px;
+        height: 20px;
+    }
+
+    & p {
+        @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
+    }
+}
+
+.project__details-cost-calculagtion-price-refresh {
+    @include fonts("OpenSans", 400, 13px, 1.55, $detailsRefreshColor);
+}
+
+.project__details-cost-calculagtion-btn {
+    margin-bottom: 15px;
+    display: block;
+    padding: 11px 18px;
+    background: $productTitleColor;
+    @include fonts("OpenSans", 600, 14px, 1.55, $mainColor);
+    transition: 0.3s ease;
+    width: 100%;
+
+    &:hover {
+      transition: 0.3s ease;
+      background: $btnMoreHover;
+    }
+}
+
+.projects__details-cost-list-more-detailed {
+    padding: 0 42px 20px 60px;
+
+    & .projects__details-cost-list-item-wrap {
+        border-top: 1px solid $detailsBorderColor;
+        border-bottom: none;
+    }
+}
+
+.projects__details-cost-list-more-active {
+    border: none;
+}
+
+
+.projects__details-cost-list-more-detailed {
+    & p {
+        @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
+    }
+
+    & .projects__details-cost-list-item-wrap {
+        cursor: initial;
+    }
+}

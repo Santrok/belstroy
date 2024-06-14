@@ -1,0 +1,111 @@
+.social {
+  position: fixed;
+  bottom: 50px;
+  right: 65px;
+  z-index: 5;
+}
+
+.social__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  animation-name: socialScale;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transition: 0.2s ease;
+  width: 60px;
+  height: 60px;
+  background: $secondColor;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.social__btn-active {
+  animation-play-state: paused;
+  background: $mainColor;
+  transition: 0.3s ease;
+
+  & .social__cross {
+    height: 16px;
+    width: 16px;
+    transition: 0.3s ease;
+  }
+
+  & .social__presentation {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  & ~ .social__list {
+    max-height: 300px;
+    bottom: 70px;
+    transition: 0.3s ease;
+
+    & li {
+      max-width: 48px;
+      max-height: 48px;
+    }
+  }
+}
+
+.social__cross {
+  transition: 0.3s ease;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.social__list {
+  transition: max-height 0.3s ease;
+  position: absolute;
+  z-index: -1;
+  max-height: 0;
+  bottom: 20px;
+  left: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  & li {
+    transition: 0.3s ease;
+    max-height: 0;
+    max-width: 48px;
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.social__list-item {
+  & a {
+    display: block;
+  }
+}
+
+@keyframes socialScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 992px) {
+  .social {
+    right: 10px;
+    bottom: 10px;
+  }
+}

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/null.css" %}" />
+    <link rel="stylesheet" href="{% static "css/style-min.css" %}" />
+    <title>Агенство недвижимости ЭлитБелСтрой</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="modals">
+        <div class="review__modal">
+          <div class="review__modal-author"></div>
+          <div class="review__modal-expert-city"></div>
+          <div class="review__modal-text"></div>
+        </div>
+        <div class="cross">
+          <svg
+            role="presentation"
+            class="t-popup__close-icon"
+            width="23px"
+            height="23px"
+            viewBox="0 0 23 23"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g stroke="none" stroke-width="1" fill="#122453" fill-rule="evenodd">
+              <rect
+                transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) "
+                x="10.3137085"
+                y="-3.6862915"
+                width="2"
+                height="30"
+              ></rect>
+              <rect
+                transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) "
+                x="10.3137085"
+                y="-3.6862915"
+                width="2"
+                height="30"
+              ></rect>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="social">
+        <div class="social__btn">
+          <div class="social__presentation">
+            <svg
+              role="presentation"
+              class="t898__icon t898__icon-write"
+              width="35"
+              height="32"
+              viewBox="0 0 35 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.2667 12.6981H23.3667M11.2667 16.4717H23.3667M4.8104 23.5777C2.4311 21.1909 1 18.1215 1 14.7736C1 7.16679 8.38723 1 17.5 1C26.6128 1 34 7.16679 34 14.7736C34 22.3804 26.6128 28.5472 17.5 28.5472C15.6278 28.5472 13.8286 28.2868 12.1511 27.8072L12 27.7925L5.03333 31V23.8219L4.8104 23.5777Z"
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              ></path>
+            </svg>
+          </div>
+          <div class="social__cross">
+            <svg
+              role="presentation"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              class="t898__icon t898__icon-close"
+              viewBox="0 0 23 23"
+            >
+              <g fillrule="evenodd">
+                <path d="M10.314 -3.686H12.314V26.314H10.314z" transform="rotate(-45 11.314 11.314)"></path>
+                <path d="M10.314 -3.686H12.314V26.314H10.314z" transform="rotate(45 11.314 11.314)"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <ul class="social__list">
+          <li class="social__list-item">
+            <a href="#">
+              <img src="./img/icons/telegram.svg" alt="" />
+            </a>
+          </li>
+          <li class="social__list-item">
+            <a href="#">
+              <img src="./img/icons/tiktok.svg" alt="" />
+            </a>
+          </li>
+          <li class="social__list-item">
+            <a href="#">
+              <img src="./img/icons/whatsapp.svg" alt="" />
+            </a>
+          </li>
+          <li class="social__list-item">
+            <a href="#">
+              <img src="./img/icons/youtube.svg" alt="" />
+            </a>
+          </li>
+          <li class="social__list-item">
+            <a href="#">
+              <img src="./img/icons/instagram.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <section class="about">
+        <div class="about__slider"></div>
+        <div class="about__overlay">
+          <header>
+            <div class="container">
+              <div class="header__wrapper">
+                <a href="#" class="header__logo">
+                  <img src="./img/logo.png" alt="logo" />
+                </a>
+                <div class="header__rating">
+                  <div class="header__bookmark-img">
+                    <img src="./img/bookmark.png" alt="bookmark" />
+                    <p>4.9</p>
+                  </div>
+                  <p>Рейтинг в яндексе</p>
+                </div>
+                <div class="header__social-callback-wrap">
+                  <div class="header__social">
+                    <p class="header__social-text animationCircle">Пишите, мы онлайн</p>
+                    <ul class="header__social-list">
+                      <li class="header__social-list-item">
+                        <a href="#">
+                          <img src="./img/icons/telegram.svg" alt="telegram" />
+                        </a>
+                      </li>
+                      <li class="header__social-list-item">
+                        <a href="#">
+                          <img src="./img/icons/tiktok.svg" alt="tiktok" />
+                        </a>
+                      </li>
+                      <li class="header__social-list-item">
+                        <a href="#">
+                          <img src="./img/icons/whatsapp.svg" alt="whatsapp" />
+                        </a>
+                      </li>
+                      <li class="header__social-list-item">
+                        <a href="#">
+                          <img src="./img/icons/youtube.svg" alt="youtube" />
+                        </a>
+                      </li>
+                      <li class="header__social-list-item">
+                        <a href="#">
+                          <img src="./img/icons/instagram.svg" alt="instagram" />
+                        </a>
+                      </li>
+                    </ul>
+                    <a href="tel:+375291234567">+7(968) 355-92-14</a>
+                  </div>
+                  <div class="header__callback">
+                    <div class="header__callback-text-wrap">
+                      <p class="header__callback-text animationCircle">ПН-ПТ</p>
+                      <p class="header__callback-text">с 10:00 до 18:00</p>
+                    </div>
+                    <a href="tel:+375291234567">+7 (968) 355-92-14</a>
+                    <p class="header__callback-btn">Заказать звонок</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+          <main>
+            <div class="container">
+              <div class="main__wrapper">
+                <nav class="main__nav">
+                  <div class="main__nav-logo">
+                    <img src="./img/logo.png" alt="" />
+                  </div>
+                  <div class="main__nav-list-wrapper">
+                    <ul class="main__nav-list">
+                      <li class="main__nav-list-item">
+                        <a href="#projectsConstruction">Услуги по строительству</a>
+                      </li>
+                      <li class="main__nav-list-item">
+                        <a href="#projectsLandscaping">Услуги по благоустройству</a>
+                      </li>
+                      <li class="main__nav-list-item">
+                        <a href="#reviews">Отзывы</a>
+                      </li>
+                      <li class="main__nav-list-item">
+                        <a href="#partners">Наши партнеры</a>
+                      </li>
+                      <li class="main__nav-list-item">
+                        <a href="#contacts">Контакты</a>
+                      </li>
+                    </ul>
+                    <div class="main__nav-list-social">
+                      <a href="#">
+                        <svg
+                          class="t-sociallinks__svg"
+                          role="presentation"
+                          width="30px"
+                          height="30px"
+                          viewBox="0 0 100 100"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50Zm21.977-68.056c.386-4.38-4.24-2.576-4.24-2.576-3.415 1.414-6.937 2.85-10.497 4.302-11.04 4.503-22.444 9.155-32.159 13.734-5.268 1.932-2.184 3.864-2.184 3.864l8.351 2.577c3.855 1.16 5.91-.129 5.91-.129l17.988-12.238c6.424-4.38 4.882-.773 3.34.773l-13.49 12.882c-2.056 1.804-1.028 3.35-.129 4.123 2.55 2.249 8.82 6.364 11.557 8.16.712.467 1.185.778 1.292.858.642.515 4.111 2.834 6.424 2.319 2.313-.516 2.57-3.479 2.57-3.479l3.083-20.226c.462-3.511.993-6.886 1.417-9.582.4-2.546.705-4.485.767-5.362Z"
+                            fill="#d5b438"
+                          ></path>
+                        </svg>
+                      </a>
+                      <a href="#">
+                        <svg
+                          class="t-sociallinks__svg"
+                          role="presentation"
+                          width="30px"
+                          height="30px"
+                          viewBox="0 0 100 100"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM69.7626 28.9928C64.6172 23.841 57.7739 21.0027 50.4832 21C35.4616 21 23.2346 33.2252 23.2292 48.2522C23.2274 53.0557 24.4823 57.7446 26.8668 61.8769L23 76L37.4477 72.2105C41.4282 74.3822 45.9107 75.5262 50.4714 75.528H50.4823C65.5029 75.528 77.7299 63.301 77.7363 48.2749C77.7408 40.9915 74.9089 34.1446 69.7626 28.9928ZM62.9086 53.9588C62.2274 53.6178 58.8799 51.9708 58.2551 51.7435C57.6313 51.5161 57.1766 51.4024 56.7228 52.0845C56.269 52.7666 54.964 54.2998 54.5666 54.7545C54.1692 55.2092 53.7718 55.2656 53.0915 54.9246C52.9802 54.8688 52.8283 54.803 52.6409 54.7217C51.6819 54.3057 49.7905 53.4855 47.6151 51.5443C45.5907 49.7382 44.2239 47.5084 43.8265 46.8272C43.4291 46.1452 43.7837 45.7769 44.1248 45.4376C44.3292 45.2338 44.564 44.9478 44.7987 44.662C44.9157 44.5194 45.0328 44.3768 45.146 44.2445C45.4345 43.9075 45.56 43.6516 45.7302 43.3049C45.7607 43.2427 45.7926 43.1776 45.8272 43.1087C46.0545 42.654 45.9409 42.2565 45.7708 41.9155C45.6572 41.6877 45.0118 40.1167 44.4265 38.6923C44.1355 37.984 43.8594 37.3119 43.671 36.8592C43.1828 35.687 42.6883 35.69 42.2913 35.6924C42.2386 35.6928 42.1876 35.6931 42.1386 35.6906C41.7421 35.6706 41.2874 35.667 40.8336 35.667C40.3798 35.667 39.6423 35.837 39.0175 36.5191C38.9773 36.5631 38.9323 36.6111 38.8834 36.6633C38.1738 37.4209 36.634 39.0648 36.634 42.2002C36.634 45.544 39.062 48.7748 39.4124 49.2411L39.415 49.2444C39.4371 49.274 39.4767 49.3309 39.5333 49.4121C40.3462 50.5782 44.6615 56.7691 51.0481 59.5271C52.6732 60.2291 53.9409 60.6475 54.9303 60.9612C56.5618 61.4796 58.046 61.4068 59.22 61.2313C60.5286 61.0358 63.2487 59.5844 63.8161 57.9938C64.3836 56.4033 64.3836 55.0392 64.2136 54.7554C64.0764 54.5258 63.7545 54.3701 63.2776 54.1395C63.1633 54.0843 63.0401 54.0247 62.9086 53.9588Z"
+                            fill="#d5b438"
+                          ></path>
+                        </svg>
+                      </a>
+                    </div>
+                    <a href="tel:+79683559214" class="main__nav-phone"> +7 (968) 355-92-14 </a>
+                  </div>
+                  <div class="main__nav-burger">
+                    <span></span>
+                  </div>
+                </nav>
+                <h1 class="main__title">Строительная компания ЭлитБелСтрой:</h1>
+                <p class="main__text">Полное сопровождение от вашей идеи до реализации мечты</p>
+                <a href="#" class="main__btn"> получить консультацию </a>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+      <section class="projects" id="projectsConstruction">
+        <div class="container">
+          <div class="projects__wrapper">
+            <div class="projects__start-block">
+              <h2 class="projects__title">Проекты по строительству</h2>
+              <p class="projects__text">
+                Детально проработанные проекты с <span>подробными сметами</span> и проверенные технадзором на
+                соответствие ГОСТам
+              </p>
+              <div class="projects__list-wrapper"></div>
+              <button type="button" class="projects__list-wrapper-more-btn">Показать еще</button>
+            </div>
+            <div class="projects__details-block">
+              <p class="projects__details-block-back">&#8592; Вернутся назад</p>
+              <div class="projects__details-about">
+                <div class="projects__details-about-img-wrap">
+                  <div class="projects__details-about-img">
+                    <img src="./img/card_photo_1.jpg" alt="" />
+                  </div>
+                  <ul class="projects__details-about-img-list">
+                    <li>
+                      <img src="./img/card_photo_2.jpg" alt="" />
+                    </li>
+                    <li>
+                      <img src="./img/card_photo_3.jpg" alt="" />
+                    </li>
+                    <li>
+                      <img src="./img/card_photo_4.jpg" alt="" />
+                    </li>
+                    <li>
+                      <img src="./img/card_photo_5.jpg" alt="" />
+                    </li>
+                  </ul>
+                </div>
+                <div class="projects__details-price">
+                  <h2 class="projects__details-title">Проект «Поллукс»</h2>
+                  <ul class="projects__details-options-list">
+                    <li class="projects__details-options-list-item">
+                      <h3>Материал стен</h3>
+                      <p>Каркасные</p>
+                    </li>
+                    <li class="projects__details-options-list-item">
+                      <h3>Фасад</h3>
+                      <p>HAUBERK</p>
+                    </li>
+                    <li class="projects__details-options-list-item">
+                      <h3>Общая площадь</h3>
+                      <p>50.4 м2</p>
+                    </li>
+                    <li class="projects__details-options-list-item">
+                      <h3>Планировка</h3>
+                      <p>1 Комната 1 санузел 1 этаж</p>
+                    </li>
+                  </ul>
+                  <div class="projects__details-prices">
+                    <p class="projects__details-price-text">Стоимость базовой комплектации:</p>
+                    <p class="projects__details-price-value">2 686 872 ₽</p>
+                  </div>
+                  <div class="projects__details-actions">
+                    <a href="#"> Подробная смета </a>
+                    <button>Скачать проект</button>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__details-scheme">
+                <nav class="projects__details-scheme-nav">
+                  <ul class="projects__details-nav-scheme-list">
+                    <li class="projects__details-nav-scheme-list-item projects__details-nav-scheme-list-item-active">
+                      Планировка
+                    </li>
+                    <li class="projects__details-nav-scheme-list-item">Фасады</li>
+                    <li class="projects__details-nav-scheme-list-item">Разрез</li>
+                  </ul>
+                </nav>
+                <div class="projects__details-scheme-img">
+                  <img src="./img/detailsImg_1.jpg" alt="" />
+                </div>
+                <div class="projects__details-scheme-button-download">Скачать проект</div>
+              </div>
+              <div class="projects__details-cost">
+                <h3 class="projects__details-cost-title">Стоимость</h3>
+                <div class="projects__details-cost-block">
+                  <ul class="projects__details-cost-list">
+                    <li class="projects__details-cost-list-item">
+                      <div class="projects__details-cost-list-item-wrap projects__details-cost-list-more-active">
+                        <div class="projects__details-cost-list-item-title-wrap">
+                          <input type="checkbox" name="" id="" />
+                          <h4>1. Подготовка участка. Материал.</h4>
+                        </div>
+                        <div class="projects__details-cost-list-item-price-wrap">
+                          <p>59 407,20 ₽</p>
+                          <div class="projects__details-cost-list-item-price-chevron">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
+                                fill="none"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <ul class="projects__details-cost-list-more-detailed">
+                        <li class="projects__details-cost-list-more-detailed-item">
+                          <div class="projects__details-cost-list-item-wrap">
+                            <div class="projects__details-cost-list-item-title-wrap">
+                              <input type="checkbox" name="" id="" />
+                              <h5>1.1 Подготовка участка. Материал.</h5>
+                            </div>
+                            <div class="projects__details-cost-list-item-price-wrap">
+                              <p>59 407,20 ₽</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="projects__details-cost-calculation">
+                    <div class="projects__details-cost-calculation-title-wrap">
+                      <p>Итого:</p>
+                      <p>2 686 872 ₽</p>
+                    </div>
+                    <div class="projects__details-cost-calculation-choice-wrap">
+                      <label for="calcMaterial&Work">
+                        <input type="radio" name="calcMaterial" id="calcMaterial&Work" />
+                        <p>Материал и работа</p>
+                      </label>
+                      <label for="calcMaterial">
+                        <input type="radio" name="calcMaterial" id="calcMaterial" />
+                        <p>Только материалы</p>
+                      </label>
+                    </div>
+                    <div class="projects__details-cost-calculation-field-wrap">
+                      <input type="text" name="" id="" placeholder="Имя" />
+                      <input type="tel" name="" id="" placeholder="Телефон" />
+                    </div>
+                    <div class="project__details-cost-calculagtion-social-choice-wrap">
+                      <label for="socialChoiceTg">
+                        <input type="radio" name="socialChoice" id="socialChoiceTg" />
+                        <p>Телеграм</p>
+                      </label>
+                      <label for="socialChoiceWA">
+                        <input type="radio" name="socialChoice" id="socialChoiceWA" />
+                        <p>WhatsApp</p>
+                      </label>
+                    </div>
+                    <button class="project__details-cost-calculagtion-btn">Рассчитать с доставкой</button>
+                    <p class="project__details-cost-calculagtion-price-refresh">
+                      Всегда актуальные цены на материалы. Обновлено 12:12 06 июня 2024 г.
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="projects" id="projectsLandscaping">
+        <div class="container">
+          <div class="projects__wrapper">
+            <div class="projects__start-block">
+              <h2 class="projects__title">Проекты по благоустройству</h2>
+              <p class="projects__text">
+                Детально проработанные проекты с <span>подробными сметами</span> и проверенные технадзором на
+                соответствие ГОСТам
+              </p>
+              <div class="projects__landscaping-list-wrapper"></div>
+              <button type="button" class="projects__list-wrapper-more-btn">Показать еще</button>
+            </div>
+            <div class="projects__details-block">
+              <p class="projects__details-block-back">&#8592; Вернутся назад</p>
+              <div class="projects__details-about">
+                <div class="projects__details-about-img-wrap">
+                  <div class="projects__details-about-img">
+                    <img src="./img/card_photo_1.jpg" alt="" />
+                  </div>
+                  <ul class="projects__details-about-img-list">
+                    <li>
+                      <img src="./img/card_photo_2.jpg" alt="" />
+                    </li>
+                    <li>
+                      <img src="./img/card_photo_3.jpg" alt="" />
+                    </li>
+                    <li>
+                      <img src="./img/card_photo_4.jpg" alt="" />
+                    </li>
+                    <li>
+                      <img src="./img/card_photo_5.jpg" alt="" />
+                    </li>
+                  </ul>
+                </div>
+                <div class="projects__details-price">
+                  <h2 class="projects__details-title">Проект «Поллукс»</h2>
+                  <ul class="projects__details-options-list">
+                    <li class="projects__details-options-list-item">
+                      <h3>Материал стен</h3>
+                      <p>Каркасные</p>
+                    </li>
+                    <li class="projects__details-options-list-item">
+                      <h3>Фасад</h3>
+                      <p>HAUBERK</p>
+                    </li>
+                    <li class="projects__details-options-list-item">
+                      <h3>Общая площадь</h3>
+                      <p>50.4 м2</p>
+                    </li>
+                    <li class="projects__details-options-list-item">
+                      <h3>Планировка</h3>
+                      <p>1 Комната 1 санузел 1 этаж</p>
+                    </li>
+                  </ul>
+                  <div class="projects__details-prices">
+                    <p class="projects__details-price-text">Стоимость базовой комплектации:</p>
+                    <p class="projects__details-price-value">2 686 872 ₽</p>
+                  </div>
+                  <div class="projects__details-actions">
+                    <a href="#"> Подробная смета </a>
+                    <button>Скачать проект</button>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__details-scheme">
+                <nav class="projects__details-scheme-nav">
+                  <ul class="projects__details-nav-scheme-list">
+                    <li class="projects__details-nav-scheme-list-item projects__details-nav-scheme-list-item-active">
+                      Планировка
+                    </li>
+                    <li class="projects__details-nav-scheme-list-item">Фасады</li>
+                    <li class="projects__details-nav-scheme-list-item">Разрез</li>
+                  </ul>
+                </nav>
+                <div class="projects__details-scheme-img">
+                  <img src="./img/detailsImg_1.jpg" alt="" />
+                </div>
+                <div class="projects__details-scheme-button-download">Скачать проект</div>
+              </div>
+              <div class="projects__details-cost">
+                <h3 class="projects__details-cost-title">Стоимость</h3>
+                <div class="projects__details-cost-block">
+                  <ul class="projects__details-cost-list">
+                    <li class="projects__details-cost-list-item">
+                      <div class="projects__details-cost-list-item-wrap projects__details-cost-list-more-active">
+                        <div class="projects__details-cost-list-item-title-wrap">
+                          <input type="checkbox" name="" id="" />
+                          <h4>1. Подготовка участка. Материал.</h4>
+                        </div>
+                        <div class="projects__details-cost-list-item-price-wrap">
+                          <p>59 407,20 ₽</p>
+                          <div class="projects__details-cost-list-item-price-chevron">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
+                                fill="none"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <ul class="projects__details-cost-list-more-detailed">
+                        <li class="projects__details-cost-list-more-detailed-item">
+                          <div class="projects__details-cost-list-item-wrap">
+                            <div class="projects__details-cost-list-item-title-wrap">
+                              <input type="checkbox" name="" id="" />
+                              <h5>1.1 Подготовка участка. Материал.</h5>
+                            </div>
+                            <div class="projects__details-cost-list-item-price-wrap">
+                              <p>59 407,20 ₽</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="projects__details-cost-calculation">
+                    <div class="projects__details-cost-calculation-title-wrap">
+                      <p>Итого:</p>
+                      <p>2 686 872 ₽</p>
+                    </div>
+                    <div class="projects__details-cost-calculation-choice-wrap">
+                      <label for="calcMaterial&Work">
+                        <input type="radio" name="calcMaterial" id="calcMaterial&Work" />
+                        <p>Материал и работа</p>
+                      </label>
+                      <label for="calcMaterial">
+                        <input type="radio" name="calcMaterial" id="calcMaterial" />
+                        <p>Только материалы</p>
+                      </label>
+                    </div>
+                    <div class="projects__details-cost-calculation-field-wrap">
+                      <input type="text" name="" id="" placeholder="Имя" />
+                      <input type="tel" name="" id="" placeholder="Телефон" />
+                    </div>
+                    <div class="project__details-cost-calculagtion-social-choice-wrap">
+                      <label for="socialChoiceTg">
+                        <input type="radio" name="socialChoice" id="socialChoiceTg" />
+                        <p>Телеграм</p>
+                      </label>
+                      <label for="socialChoiceWA">
+                        <input type="radio" name="socialChoice" id="socialChoiceWA" />
+                        <p>WhatsApp</p>
+                      </label>
+                    </div>
+                    <button class="project__details-cost-calculagtion-btn">Рассчитать с доставкой</button>
+                    <p class="project__details-cost-calculagtion-price-refresh">
+                      Всегда актуальные цены на материалы. Обновлено 12:12 06 июня 2024 г.
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="excursion" id="excursion">
+        <div class="excursion__model-bg">
+          <div class="container">
+            <div class="excursion__wrapper">
+              <h2 class="excursion__title">ПРЕДЛАГАЕМ ВАМ ЗАПИСАТЬСЯ НА <span>БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</span></h2>
+              <p class="excursion__text">На экскурсии вы сможете пообщаться с прорабом и строителями, а так же:</p>
+              <ul class="excursion__text-list">
+                <li class="excursion__text-list-item"><span>ПОЗНАКОМИТЕСЬ</span>С ТЕХНОЛОГИЕЙ СТРОИТЕЛЬСТВА</li>
+                <li class="excursion__text-list-item"><span>ОЦЕНИТЕ</span>КАЧЕСТВО МАТЕРИАЛОВ НА СТРОЙПЛОЩАДКЕ</li>
+                <li class="excursion__text-list-item"><span>ЗАДАДИТЕ</span>ВОПРОСЫ РУКОВОДИТЕЛЮ СТРОИТЕЛЬСТВА</li>
+              </ul>
+              <form class="excursion__form">
+                <input type="text" name="" id="" placeholder="Имя" />
+                <input type="tel" name="" id="" placeholder="Телефон" />
+                <input type="date" name="" id="" placeholder="Желаемая дата экскурсии" />
+                <button>Отправить</button>
+              </form>
+              <p class="excursion__model-politic politic">
+                Нажимая на кнопку "отправить" вы соглашаетесь <a href="#">с политикой конфиденциальности</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="custom__project">
+        <div class="container">
+          <div class="custom__project-wrapper">
+            <div class="custom__project-img-wrap">
+              <div class="custom__project-img">
+                <img src="./img/photo_10.jpg" alt="" />
+              </div>
+              <div class="custom__project-img">
+                <img src="./img/photo_11.jpg" alt="" />
+              </div>
+              <div class="custom__project-img">
+                <img src="./img/photo_5.jpg" alt="" />
+              </div>
+            </div>
+            <div class="custom__project-title-wrap">
+              <h2 class="custom__project-title">НЕ НАШЛИ ПОДХОДЯЩИЙ ПРОЕКТ?</h2>
+              <p class="custom__project-text">Сделаем индивидуальный проект или предоставим выбор из тысячи готовых.</p>
+              <a href="#" class="custom__project-btn"> Оставить заявку </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faq" id="services">
+        <div class="container">
+          <div class="faq__wrapper">
+            <h2 class="faq__title">С НАМИ П<span>РОСТ</span>О</h2>
+            <ul class="faq__list">
+              <li class="faq__list-item">
+                <footer class="faq__list-footer">
+                  <h3 class="faq__list-item-title">выбор проекта</h3>
+                  <div class="faq__list-item-cross">
+                    <svg
+                      fill="#736c46"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="plus"
+                      class="icon glyph"
+                      stroke="#736c46"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                </footer>
+                <header class="faq__list-header">
+                  <p class="faq__list-item-text">
+                    Наш архитектор спроектирует дом Вашей мечты или выберите проект из 1000 уже готовых и проверенных
+                    временем.
+                  </p>
+                </header>
+              </li>
+              <li class="faq__list-item">
+                <footer class="faq__list-footer">
+                  <h3 class="faq__list-item-title">покупка участка</h3>
+                  <div class="faq__list-item-cross">
+                    <svg
+                      fill="#736c46"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="plus"
+                      class="icon glyph"
+                      stroke="#736c46"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                </footer>
+                <header class="faq__list-header">
+                  <p class="faq__list-item-text">
+                    Наши специалисты подберут участок, проверят возможность строительства и подключения коммуникаций,
+                    сопроводят сделку. При необходимости продадут вашу недвижимость или одобрят ипотеку
+                  </p>
+                </header>
+              </li>
+              <li class="faq__list-item">
+                <footer class="faq__list-footer">
+                  <h3 class="faq__list-item-title">договор подряда</h3>
+                  <div class="faq__list-item-cross">
+                    <svg
+                      fill="#736c46"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="plus"
+                      class="icon glyph"
+                      stroke="#736c46"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                </footer>
+                <header class="faq__list-header">
+                  <p class="faq__list-item-text">
+                    Заключаем договор, в котором зафиксирована стоимость и сроки строительства, а также гарантийные
+                    обязательства
+                  </p>
+                </header>
+              </li>
+              <li class="faq__list-item">
+                <footer class="faq__list-footer">
+                  <h3 class="faq__list-item-title">Строительство</h3>
+                  <div class="faq__list-item-cross">
+                    <svg
+                      fill="#736c46"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="plus"
+                      class="icon glyph"
+                      stroke="#736c46"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                </footer>
+                <header class="faq__list-header">
+                  <p class="faq__list-item-text">
+                    Строительство занимает от 3 до 6 месяцев. По желанию заказчика устанавливаются видеонаблюдение. По
+                    окончании подписание акта приема-передачи
+                  </p>
+                </header>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="steps" id="steps">
+        <div class="container">
+          <div class="seps__wrapper">
+            <h2 class="steps__title"><span>ПОСМОТРИТЕ НА 6 ЭТАПОВ</span>, КАК БУДЕТ СТРОИТЬСЯ ВАШ ИДЕАЛЬНЫЙ ДОМ</h2>
+            <div class="steps__list-wrapper">
+              <ul class="steps__tab-list">
+                <li class="steps__tab-list-item steps__tab-list-item-active" data-step-index="0">этап 1</li>
+                <li class="steps__tab-list-item" data-step-index="1">этап 2</li>
+                <li class="steps__tab-list-item" data-step-index="2">этап 3</li>
+                <li class="steps__tab-list-item" data-step-index="3">этап 4</li>
+                <li class="steps__tab-list-item" data-step-index="4">этап 5</li>
+                <li class="steps__tab-list-item" data-step-index="5">этап 6</li>
+              </ul>
+              <ul class="steps__list">
+                <li class="steps__list-item steps__list-item-active">
+                  <div class="steps__list-item-img">
+                    <img src="./img/steps_1.jpeg" alt="" />
+                  </div>
+                  <div class="steps__list-item-text-wrap">
+                    <h3>СОГЛАСОВЫВАЕМ С ВАМИ ВСЕ ПРЕДВАРИТЕЛЬНЫЕ ВОПРОСЫ</h3>
+                    <p>Что входит в 1-й этап:</p>
+                    <ul class="steps__list-item-text-list">
+                      <li>
+                        <p><span>Консультация</span> по выбору материала строительства;</p>
+                      </li>
+                      <li>
+                        <p><span>Подбор</span> проекта дома при необходимости;</p>
+                      </li>
+                      <li>
+                        <p>Предварительный <span>расчет</span> строительства.</p>
+                      </li>
+                    </ul>
+                    <p class="steps__list-item-annotation">
+                      <strong>!&nbsp;</strong> Первый этап помогает нам узнать преимущества работы с нами и ни к чему
+                      вас не обязывает
+                    </p>
+                  </div>
+                </li>
+                <li class="steps__list-item">
+                  <div class="steps__list-item-img">
+                    <img src="./img/steps_2.jpeg" alt="" />
+                  </div>
+                  <div class="steps__list-item-text-wrap">
+                    <h3>ЕСЛИ НУЖЕН ПРОЕКТ, ВЫБИРАЕМ ИЗ ТИПОВЫХ ИЛИ РАЗРАБАТЫВАЕМ ИНДИВИДУАЛЬНЫЙ</h3>
+                    <p>Что входит в проект: <span>записка;</span></p>
+                    <ul class="steps__list-item-text-list">
+                      <li>
+                        <p><span>Схема</span> планировочной организации с расположением дома;</p>
+                      </li>
+                      <li>
+                        <p>Дополнительных построек, скважины, септика;</p>
+                      </li>
+                      <li>
+                        <p>Поэтажные планы с расстановкой мебели;</p>
+                      </li>
+                      <li>
+                        <p><span>Фасады</span> в цвете с высотными отметками;</p>
+                      </li>
+                      <li>
+                        <p>Реалистичные перспективные <span>виды дома</span> со всех сторон.</p>
+                      </li>
+                    </ul>
+                    <p class="steps__list-item-annotation">
+                      <strong>!&nbsp;</strong> Так же возможна переделка типового проекта под ваши пожелания
+                    </p>
+                  </div>
+                </li>
+                <li class="steps__list-item">
+                  <div class="steps__list-item-img">
+                    <img src="./img/steps_3.jpeg" alt="" />
+                  </div>
+                  <div class="steps__list-item-text-wrap">
+                    <h3>ЗАЛИВКА ФУНДАМЕНТА. НАЧАЛО СТРОИТЕЛЬСТВА</h3>
+                    <p>Какие работы производятся:</p>
+                    <ul class="steps__list-item-text-list">
+                      <li>
+                        <p><span>Разметка фундамента</span> после планировки участка;</p>
+                      </li>
+                      <li>
+                        <p><span>Земляные работы</span> (копка траншеи или котлована);</p>
+                      </li>
+                      <li>
+                        <p><span>Монтаж</span> опалубки и арматурных каркасов;</p>
+                      </li>
+                      <li>
+                        <p><span>Заливка</span> стен фундамента бетоном;</p>
+                      </li>
+                      <li>
+                        <p><span>Демонтаж</span> опалубки;</p>
+                      </li>
+                      <li>
+                        <p>Обратная <span>засыпка</span> грунта.</p>
+                      </li>
+                    </ul>
+                    <p class="steps__list-item-annotation">
+                      <strong>!&nbsp;</strong> Заливка фундамента - это самый тяжелый и ответственный этап строительства
+                      дома.
+                    </p>
+                  </div>
+                </li>
+                <li class="steps__list-item">
+                  <div class="steps__list-item-img">
+                    <img src="./img/steps_4.jpeg" alt="" />
+                  </div>
+                  <div class="steps__list-item-text-wrap">
+                    <h3>ВОЗВЕДЕНИЕ СТЕН</h3>
+                    <p>Что входит в работы:</p>
+                    <ul class="steps__list-item-text-list">
+                      <li>
+                        <p>
+                          <span>Каркасный дом;</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p><span>Из блоков</span> (газобенон, арболит, керамоблоки);</p>
+                      </li>
+                      <li>
+                        <p><span>Из бревна</span> (отцилиндрованное, ручной руби);</p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>Из кирпича;</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>Из СИП - панелей.</span>
+                        </p>
+                      </li>
+                    </ul>
+                    <p class="steps__list-item-annotation">
+                      <strong>!&nbsp;</strong> В зависимости от от материала стен будет зависит стоимость и сроки
+                      строительства коробки дома.
+                    </p>
+                  </div>
+                </li>
+                <li class="steps__list-item">
+                  <div class="steps__list-item-img">
+                    <img src="./img/steps_5.jpeg" alt="" />
+                  </div>
+                  <div class="steps__list-item-text-wrap">
+                    <h3>УСТАНОВКА КРЫШИ</h3>
+                    <p>Что входит в работы:</p>
+                    <ul class="steps__list-item-text-list">
+                      <li>
+                        <p>
+                          <span>Установка</span> стропильной системыдля выбранного вариантакрыши( двухскатная,
+                          вальмовая, мансардная и др.);
+                        </p>
+                      </li>
+                      <li>
+                        <p><span>Монтаж</span> изоляционного слоя кровли;</p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>Монтаж</span> кровельного материала ( металлочерепица, мягкая кровля, фальцевая кровля и
+                          др.)
+                        </p>
+                      </li>
+                    </ul>
+                    <p class="steps__list-item-annotation">
+                      <strong>!&nbsp;</strong> Обращаем ваше внимание, что сроки и стоимость монтажа кровли зависят от
+                      цены и сложности конструкции.
+                    </p>
+                  </div>
+                </li>
+                <li class="steps__list-item">
+                  <div class="steps__list-item-img">
+                    <img src="./img/steps_6.jpeg" alt="" />
+                  </div>
+                  <div class="steps__list-item-text-wrap">
+                    <h3>ВНЕШНЯЯ ОТДЕЛКА</h3>
+                    <p>Что входит в работы:</p>
+                    <ul class="steps__list-item-text-list">
+                      <li>
+                        <p>
+                          <span>Установка окон;</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p><span>Фасадные работы</span> (вариант фасада)</p>
+                      </li>
+                    </ul>
+                    <p class="steps__list-item-annotation">
+                      <strong>!&nbsp;</strong> Работы по отделке - это финальная фаза во время возведения дома.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="info__company">
+        <div class="container">
+          <div class="info__company-wrapper">
+            <ul class="info__company-list">
+              <li class="info__company-list-item">
+                <h2>10</h2>
+                <p>Лет на рынке недвижимости</p>
+              </li>
+              <li class="info__company-list-item">
+                <h2>9000</h2>
+                <p>Довольных клиентов</p>
+              </li>
+              <li class="info__company-list-item">
+                <h2>330</h2>
+                <p>Отзывов</p>
+              </li>
+              <li class="info__company-list-item">
+                <h2>60</h2>
+                <p>Профессиональных сотрудников</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="reviews" id="reviews">
+        <div class="container">
+          <div class="reviews__wrapper">
+            <h2 class="reviews__title">У НАС ТОЛЬКО РЕАЛЬНЫЕ ОТЗЫВЫ</h2>
+            <ul class="reviews__list">
+              <li class="reviews__list-item">
+                <footer class="revies__list-item-title-wrap">
+                  <h3>ELENA</h3>
+                  <p>Знаток города 2 уровня</p>
+                </footer>
+                <header class="reviews__text">
+                  <p>
+                    Хочу выразить огромную благодарность риелтору Ольге, ипотечному брокеру Михаилу и юристу Лилии за их
+                    проделанную работу☺️👍С момента обращения до успешной сделки прошло чуть больше месяца. Очень
+                    довольна результатом. Профессионалы своего дела, рекомендую!!!
+                  </p>
+                </header>
+                <div class="reviews__list-item-more">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </li>
+              <li class="reviews__list-item">
+                <footer class="revies__list-item-title-wrap">
+                  <h3>НАСТЯ ИВАНОВА</h3>
+                  <p>Знаток города 5 уровня</p>
+                </footer>
+                <header class="reviews__text">
+                  <p>
+                    Хочу выразить огромную благодарность вашему агентству Арбат. И отдельное спасибо моему риелтору
+                    Лолите и юристу Диние . Очень быстро помогли продать комнату . Сделка была не простая но специалисты
+                    Арбата справились с ней на раз два . Желаю и в дальнейшем вам побольше довольных клиентов, спасибо
+                    огромное с уважением Анастасия.
+                  </p>
+                </header>
+                <div class="reviews__list-item-more">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </li>
+              <li class="reviews__list-item">
+                <footer class="revies__list-item-title-wrap">
+                  <h3>АЛЛА ЛУКОЯНОВА</h3>
+                  <p>Знаток города 4 уровня</p>
+                </footer>
+                <header class="reviews__text">
+                  <p>
+                    С агенством "Арбат " , самым лучшим агенством города, судьба меня связывает не раз , а именно с
+                    риэлтором Татьяной Федотовой, профессионалом своего дела , порядочной , выдержанной , культурной
+                    женщиной , которая всегда выслушает и поможет в любой ситуации , благодаря своей компетентности и
+                    знания дела, она всегда защищает обе стороны , чтобы было всем хорошо , ненавязчиво , а с правом
+                    выбора , одним словом умница - красавица! Так же хочется отметить грамотного юриста Снежанну,
+                    располагающего к себе человека с первых слов ! Девчата - молодцы ! Дальнейшего вам процветания!
+                  </p>
+                </header>
+                <div class="reviews__list-item-more">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="partners" id="partners">
+        <div class="container">
+          <div class="partners__wrapper">
+            <h2 class="partners__title">Наши партнеры</h2>
+            <ul class="partners__list">
+              <li class="partners__list-item">
+                <img src="./img/brand_1.png" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_2.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_3.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_4.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_5.png" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_6.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_7.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_8.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_9.png" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_10.png" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_11.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_12.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_13.webp" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_14.png" alt="" />
+              </li>
+              <li class="partners__list-item">
+                <img src="./img/brand_15.png" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <footer class="footer" id="contacts">
+        <div class="container">
+          <div class="footer__wrapper">
+            <h2 class="footer__title">НАШИ КОНТАКТЫ</h2>
+            <p class="footer__text">Оставьте заявку и наш менеджер свяжется с вами!</p>
+            <div class="footer__form-wrapper">
+              <form class="footer__form">
+                <input type="text" name="name" id="" placeholder="Имя" />
+                <input type="tel" name="phone" id="" placeholder="Телефон" />
+                <button>Отправить</button>
+                <ul class="footer__list-social">
+                  <li>
+                    <a href="#">
+                      <img src="./img/icons/telegram.svg" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./img/icons/tiktok.svg" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./img/icons/whatsapp.svg" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./img/icons/youtube.svg" alt="" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./img/icons/instagram.svg" alt="" />
+                    </a>
+                  </li>
+                </ul>
+              </form>
+              <div class="footer__text">
+                <p class="footer__adress">ЗЕЛЕНОДОЛЬСК, ЛЕНИНА 61, 2 ЭТАЖ</p>
+                <p class="footer__working-time">С 9:00 ДО 17:00</p>
+                <a href="#" class="footer__email"> CNARBAT@MAIL.RU </a>
+                <p><span>Менеджер:</span> <a href="#">+7 (843) 717-86-75</a></p>
+                <a href="#" class="footer__adress-btn"> как к нам проехать </a>
+              </div>
+            </div>
+            <div class="footer__bottom">
+              <div class="footer__logo">
+                <img src="./img/logo.png" alt="" />
+              </div>
+              <a href="#" class="footer__politic"> Политика конфиденциальности </a>
+              <a href="#" class="footer__develop"> Разработка </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/aboutSlider.js"></script>
+    <script src="./js/projects.js"></script>
+    <script src="./js/faq.js"></script>
+    <script src="./js/steps.js"></script>
+    <script src="./js/reviewsSlider.js"></script>
+    <script src="./js/reviewsModal.js"></script>
+    <script src="./js/burger.js"></script>
+    <script src="./js/social.js"></script>
+    <script src="./js/projectsDetails.js"></script>
+  </body>
+</html>

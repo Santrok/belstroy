@@ -1,0 +1,33 @@
+.partners {
+    padding-bottom: 150px
+}
+
+.partners__title {
+    @include fonts("OpenSans", 600, 52px, 1.23, $secondColor);
+    text-transform: uppercase;
+    margin-bottom: 42px;
+}
+
+.partners__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+}
+
+.partners__list-item {
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .partners__list {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 30px;
+    }
+}
+
