@@ -211,6 +211,21 @@ class AdminBackgroundSliderImage(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: BackgroundSliderImage"""
 
+
+class Improvement(models.Model):
+    title = models.CharField("Заголовок", max_length=255)
+    description = models.TextField("Описание")
+    main_photo = models.ImageField("Главное изображение", upload_to="improvement_main_photo")
+
+    def __str__(self):
+        return self.title
+
+
+class AdminImprovement(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: Improvement"""
+
+
 # class ImprovementPhoto(models.Model):
 #     photo = models.ImageField('Изображение')
 #     improvement = models.ForeignKey('Благоустройство', on_delete=models.CASCADE, verbose_name='Дом')

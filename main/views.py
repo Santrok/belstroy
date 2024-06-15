@@ -1,4 +1,5 @@
 import telebot
+
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -7,8 +8,9 @@ from rest_framework.response import Response
 
 from config.settings import env_keys
 from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, Fact, InfoCompany, Partner, HouseType, \
-    House, SignUpForAFreeConsultation, CallBack
-from main.serializer import HouseTypeSerializer, HouseAllSerializer, ConsultationSerializer, CallBackSerializer
+    House, SignUpForAFreeConsultation, CallBack, Improvement
+from main.serializer import HouseTypeSerializer, HouseAllSerializer, ConsultationSerializer, CallBackSerializer, \
+    ImprovementSerializer
 
 
 def get_main_page(request):
@@ -68,3 +70,9 @@ class CallBackAPIView(CreateAPIView):
         message = f'Имя: {serializer.validated_data.get("name")}\nТелефон: {serializer.validated_data.get("phone_number")}'
         send_telegram_message(message)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+
+class ImprovementAPIView(ListAPIView):
+    queryset = Improvement.objects.all()
+    serializer_class = ImprovementSerializer
+
