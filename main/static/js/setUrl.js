@@ -1,0 +1,1 @@
+localStorage.setItem('url', document.querySelector('.wrapper').dataset.url);

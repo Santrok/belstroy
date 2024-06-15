@@ -9,7 +9,7 @@
     <title>Агенство недвижимости ЭлитБелСтрой</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" data-url="{{ url }}">
       <div class="modals">
         <div class="review__modal">
           <div class="review__modal-author"></div>
@@ -205,6 +205,9 @@
                       <li class="main__nav-list-item">
                         <a href="#contacts">Контакты</a>
                       </li>
+                      <li class="main__nav-list-item">
+                        <a href="#vacancy">Вакансии</a>
+                      </li>
                     </ul>
                     <div class="main__nav-list-social">
                       <a href="#">
@@ -262,7 +265,7 @@
         <div class="container">
           <div class="projects__wrapper">
             <div class="projects__start-block">
-              <h2 class="projects__title">Проекты по строительству</h2>
+              <h2 class="projects__title">Каркасное домостроение</h2>
               <p class="projects__text">
                 Детально проработанные проекты с <span>подробными сметами</span> и проверенные технадзором на
                 соответствие ГОСТам
@@ -271,25 +274,13 @@
               <button type="button" class="projects__list-wrapper-more-btn">Показать еще</button>
             </div>
             <div class="projects__details-block">
-              <p class="projects__details-block-back">&#8592; Вернутся назад</p>
+              <p class="projects__details-block-back">&#8592; Вернуться назад</p>
               <div class="projects__details-about">
                 <div class="projects__details-about-img-wrap">
                   <div class="projects__details-about-img">
-                    <img src="./img/card_photo_1.jpg" alt="" />
+                    <img src="" alt="" />
                   </div>
                   <ul class="projects__details-about-img-list">
-                    <li>
-                      <img src="./img/card_photo_2.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_3.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_4.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_5.jpg" alt="" />
-                    </li>
                   </ul>
                 </div>
                 <div class="projects__details-price">
@@ -305,7 +296,7 @@
                     </li>
                     <li class="projects__details-options-list-item">
                       <h3>Общая площадь</h3>
-                      <p>50.4 м2</p>
+                      <p>50.4 м<sup>2</sup></p>
                     </li>
                     <li class="projects__details-options-list-item">
                       <h3>Планировка</h3>
@@ -315,10 +306,6 @@
                   <div class="projects__details-prices">
                     <p class="projects__details-price-text">Стоимость базовой комплектации:</p>
                     <p class="projects__details-price-value">2 686 872 ₽</p>
-                  </div>
-                  <div class="projects__details-actions">
-                    <a href="#"> Подробная смета </a>
-                    <button>Скачать проект</button>
                   </div>
                 </div>
               </div>
@@ -335,86 +322,6 @@
                 <div class="projects__details-scheme-img">
                   <img src="./img/detailsImg_1.jpg" alt="" />
                 </div>
-                <div class="projects__details-scheme-button-download">Скачать проект</div>
-              </div>
-              <div class="projects__details-cost">
-                <h3 class="projects__details-cost-title">Стоимость</h3>
-                <div class="projects__details-cost-block">
-                  <ul class="projects__details-cost-list">
-                    <li class="projects__details-cost-list-item">
-                      <div class="projects__details-cost-list-item-wrap projects__details-cost-list-more-active">
-                        <div class="projects__details-cost-list-item-title-wrap">
-                          <input type="checkbox" name="" id="" />
-                          <h4>1. Подготовка участка. Материал.</h4>
-                        </div>
-                        <div class="projects__details-cost-list-item-price-wrap">
-                          <p>59 407,20 ₽</p>
-                          <div class="projects__details-cost-list-item-price-chevron">
-                            <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
-                                fill="none"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <ul class="projects__details-cost-list-more-detailed">
-                        <li class="projects__details-cost-list-more-detailed-item">
-                          <div class="projects__details-cost-list-item-wrap">
-                            <div class="projects__details-cost-list-item-title-wrap">
-                              <input type="checkbox" name="" id="" />
-                              <h5>1.1 Подготовка участка. Материал.</h5>
-                            </div>
-                            <div class="projects__details-cost-list-item-price-wrap">
-                              <p>59 407,20 ₽</p>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <form class="projects__details-cost-calculation">
-                    <div class="projects__details-cost-calculation-title-wrap">
-                      <p>Итого:</p>
-                      <p>2 686 872 ₽</p>
-                    </div>
-                    <div class="projects__details-cost-calculation-choice-wrap">
-                      <label for="calcMaterial&Work">
-                        <input type="radio" name="calcMaterial" id="calcMaterial&Work" />
-                        <p>Материал и работа</p>
-                      </label>
-                      <label for="calcMaterial">
-                        <input type="radio" name="calcMaterial" id="calcMaterial" />
-                        <p>Только материалы</p>
-                      </label>
-                    </div>
-                    <div class="projects__details-cost-calculation-field-wrap">
-                      <input type="text" name="" id="" placeholder="Имя" />
-                      <input type="tel" name="" id="" placeholder="Телефон" />
-                    </div>
-                    <div class="project__details-cost-calculagtion-social-choice-wrap">
-                      <label for="socialChoiceTg">
-                        <input type="radio" name="socialChoice" id="socialChoiceTg" />
-                        <p>Телеграм</p>
-                      </label>
-                      <label for="socialChoiceWA">
-                        <input type="radio" name="socialChoice" id="socialChoiceWA" />
-                        <p>WhatsApp</p>
-                      </label>
-                    </div>
-                    <button class="project__details-cost-calculagtion-btn">Рассчитать с доставкой</button>
-                    <p class="project__details-cost-calculagtion-price-refresh">
-                      Всегда актуальные цены на материалы. Обновлено 12:12 06 июня 2024 г.
-                    </p>
-                  </form>
-                </div>
               </div>
             </div>
           </div>
@@ -424,7 +331,7 @@
         <div class="container">
           <div class="projects__wrapper">
             <div class="projects__start-block">
-              <h2 class="projects__title">Проекты по благоустройству</h2>
+              <h2 class="projects__title">Благоустройство придомовой территории</h2>
               <p class="projects__text">
                 Детально проработанные проекты с <span>подробными сметами</span> и проверенные технадзором на
                 соответствие ГОСТам
@@ -594,9 +501,9 @@
                 <li class="excursion__text-list-item"><span>ЗАДАДИТЕ</span>ВОПРОСЫ РУКОВОДИТЕЛЮ СТРОИТЕЛЬСТВА</li>
               </ul>
               <form class="excursion__form">
-                <input type="text" name="" id="" placeholder="Имя" />
-                <input type="tel" name="" id="" placeholder="Телефон" />
-                <input type="date" name="" id="" placeholder="Желаемая дата экскурсии" />
+                <input type="text" name="name" id="" placeholder="Имя" />
+                <input type="tel" name="phone_number" id="" placeholder="Телефон" />
+                <input type="date" name="date_of_consultation" id="" placeholder="Желаемая дата экскурсии" />
                 <button type="button">Отправить</button>
               </form>
               <p class="excursion__model-politic politic">
@@ -1014,7 +921,9 @@
     <script src="{% static "/js/reviewsModal.js" %}"></script>
     <script src="{% static "/js/burger.js" %}"></script>
     <script src="{% static "/js/social.js" %}"></script>
-    <script src="{% static "/js/projectsDetails.js" %}"></script>
     <script src="{% static "js/successModal.js" %}"></script>
+    <script src="{% static "js/setUrl.js" %}"></script>
+    <script src="{% static "/js/projectsDetails.js" %}"></script>
+    <script src="{% static "/js/forms.js" %}"></script>
   </body>
 </html>

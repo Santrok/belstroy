@@ -9,7 +9,7 @@ class HouseSerializer(serializers.ModelSerializer):
     class Meta:
         model = House
         fields = ["id", "name", "room", "floor", "bathroom", "square",
-                  "building_materials_equipment", "cost_of_basic_equipment"]
+                  "building_materials_equipment", "cost_of_basic_equipment", "main_photo"]
 
 
 class HouseTypeSerializer(serializers.ModelSerializer):

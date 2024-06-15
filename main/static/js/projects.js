@@ -1,454 +1,144 @@
-const arrHouse = [
-  {
-    id: 1,
-    title: "Каркасные",
-    items: [
-      {
-        itemsTitle: "Конопус",
-        itemsMeters: "88,19",
-        itemOptions: ["1 этаж", "3 комнаты", "1 санузел"],
-        itemImg: [
-            './img/card_photo_1.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "3,18 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "4,91 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Порцион",
-        itemsMeters: "87,71",
-        itemOptions: ["1 этаж", "2 комнаты", "1 санузел"],
-        itemImg: [
-            './img/card_photo_2.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "2,94 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "4,22 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Поллукс",
-        itemsMeters: "50,4",
-        itemOptions: ["1 этаж", "1 комнаты", "1 санузел"],
-        itemImg: [
-            './img/card_photo_3.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "1,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "2,69 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Аркус",
-        itemsMeters: "170",
-        itemOptions: ["2 этаж", "4 комнаты", "2 санузел"],
-        itemImg: [
-            './img/card_photo_4.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "4,46 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "6,57 млн",
-          },
-        ],
-      },
+function requestBuilding(url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      renderProjects(data, ".projects__list-wrapper");
+      projectsDetails();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
-    ],
-  },
-  {
-    id: 1,
-    title: "Газобетон",
-    items: [
-      {
-        itemsTitle: "Питиус",
-        itemsMeters: "61",
-        itemOptions: ["1 этаж", "2 комнаты", "1 санузел"],
-        itemImg: [
-            './img/card_photo_7.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "3,24 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "4,00 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Фидий",
-        itemsMeters: "111",
-        itemOptions: ["1 этаж", "3 комнаты", "2 санузел"],
-        itemImg: [
-          './img/card_photo_8.jpg',
-            './img/photo_11.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "4,38 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "7,16 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Пифей",
-        itemsMeters: "89,65",
-        itemOptions: ["1 этаж", "2 комнаты", "1 санузел"],
-        itemImg: [
-            './img/card_photo_9.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "1,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "2,69 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Леонардо",
-        itemsMeters: "129",
-        itemOptions: ["2 этаж", "4 комнаты", "2 санузел"],
-        itemImg: [
-            './img/card_photo_10.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "3,98 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "6,64 млн",
-          },
-        ],
-      },
-    ],
-  },
-
-];
-
-const arrLandscaping = [
-  {
-    id: 1,
-    title: "Щебень",
-    items: [
-      {
-        itemsTitle: "Белый",
-        itemsMeters: "100",
-        itemOptions: ["мелкой фракции", "средней фракции", "крупной фракции"],
-        itemImg: [
-            './img/photo_1.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "500 тыс. руб.",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "1 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Белый и плитка",
-        itemsMeters: "88,9",
-        itemOptions: ["1 этаж", "2 комнаты", "1 санузел"],
-        itemImg: [
-          './img/photo_2.jpg',
-            './img/photo_11.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "1,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "2,69 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Белый и плитка",
-        itemsMeters: "88,9",
-        itemOptions: ["1 этаж", "2 комнаты", "1 санузел"],
-        itemImg: [
-          './img/photo_2.jpg',
-            './img/photo_11.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "1,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "2,69 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Белый и плитка",
-        itemsMeters: "88,9",
-        itemOptions: ["1 этаж", "2 комнаты", "1 санузел"],
-        itemImg: [
-          './img/photo_2.jpg',
-            './img/photo_11.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "1,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "2,69 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Белый и плитка",
-        itemsMeters: "88,9",
-        itemOptions: ["1 этаж", "2 комнаты", "1 санузел"],
-        itemImg: [
-          './img/photo_2.jpg',
-            './img/photo_11.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "1,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "2,69 млн",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 1,
-    title: "Плитка и газон",
-    items: [
-      {
-        itemsTitle: "Плитка",
-        itemsMeters: "100",
-        itemOptions: ["мелкой фракции", "средней фракции", "крупной фракции"],
-        itemImg: [
-            './img/photo_3.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "500 тыс. руб.",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "1 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Газон",
-        itemsMeters: "150",
-        itemOptions: ["Голандский"],
-        itemImg: [
-          './img/photo_4.jpg',
-            './img/photo_11.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "0,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "1,69 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Приусадебная зона",
-        itemsMeters: "88,9",
-        itemOptions: ["Плитка", "Газон"],
-        itemImg: [
-            './img/photo_11.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "1,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "3,69 млн",
-          },
-        ],
-      },
-      {
-        itemsTitle: "Газон",
-        itemsMeters: "138,5",
-        itemOptions: ["1 этаж", "2 комнаты", "1 санузел"],
-        itemImg: [
-            './img/photo_6.jpg',
-            './img/photo_2.jpg',
-            './img/photo_3.jpg',
-            './img/photo_4.jpg',
-        ],
-        itemPrices: [
-          {
-            itemPricesTitle: "Стройматериалы",
-            itemPrice: "1,96 млн",
-          },
-          {
-            itemPricesTitle: "В базовой комплектации",
-            itemPrice: "2,69 млн",
-          },
-        ],
-      },
-
-    ],
-  },
-]
-
+requestBuilding(`${localStorage.getItem("url")}api/material/`);
 
 function renderProjects(arr, className) {
-  if(typeof className !== 'string') return 'Error, className is not a string'
-    const projectListWrapper = document.querySelector(className)
-    for(let i of arr) {
-        const div = document.createElement('div')
-        div.classList.add('projects__list-building-type')
-        div.innerHTML = `
+  const backToProjects = document.querySelector(".projects__details-block-back");
+  backToProjects.addEventListener("click", () => {
+    const porjectsWrapper = document.querySelector(".projects__wrapper");
+    porjectsWrapper.children[1].style.display = "none";
+    porjectsWrapper.children[0].style.display = "block";
+    requestBuilding(`${localStorage.getItem("url")}api/material/`);
+  });
+  if (typeof className !== "string") return "Error, className is not a string";
+  const projectListWrapper = document.querySelector(className);
+  projectListWrapper.innerHTML = "";
+  for (let i of arr) {
+    const div = document.createElement("div");
+    div.classList.add("projects__list-building-type");
+    div.innerHTML = `
                     <div class="projects__list-building-type-title">
-                        ${i.title}
+                        ${i.material}
                     </div>
                     <ul class="projects__list">
-                    ${i.items.map(item => {
+                    ${i.house_set
+                      .map((item) => {
                         return `
-                        <li>
-                            <article class="projects__list-item">
-                                <a href="#" class="projects__list-item-link">
+                        <li class="projects__list-item-wrapper">
+                            <article class="projects__list-item" data-id="${item.id}">
+                                <div class="projects__list-item-link">
                                     <div class="projects__list-item-img">
-                                        <img src="${item.itemImg[0]}" alt="">
+                                        <img src="${item.main_photo}" alt="">
                                     </div>
                                     <footer class="projects__list-item-title-wrap">
                                         <h3 class="projects__list-item-title">
-                                            ${item.itemsTitle}
+                                            ${item.name}
                                         </h3>
                                         <p class="projects__list-item-square-km">
-                                            ${item.itemsMeters} м<sup>2</sup>
+                                            ${item.square} м<sup>2</sup>
                                         </p>
                                     </footer>
-                                </a>
+                                </div>
                                 <header class="projects__list-item-about-wrapper">
                                     <ul class="projects__list-item-about-list">
-                                        ${item.itemOptions.map(option => {
-                                            return `
-                                            <li class="projects__list-item-about">
-                                                ${option.trim()}
-                                            </li>`
-                                        }).join('')}
+                                      <li class="projects__list-item-about">
+                                              ${item.room}
+                                      </li>
+                                      <li class="projects__list-item-about">
+                                              ${item.bathroom}
+                                      </li>
+                                      <li class="projects__list-item-about">
+                                              ${item.floor}
+                                      </li>
                                     </ul>
                                     <ul class="projects__list-item-about-price-list">
-                                    ${item.itemPrices.map(price => {
-                                            return `
-                                            <li>
-                                                <p class="projects__list-item-about-price-text">
-                                                    ${price.itemPricesTitle.trim()}
-                                                </p>
-                                                <p class="projects__list-item-about-price-value">
-                                                    ${price.itemPrice.trim()}
-                                                </p>
-                                            </li>
-                                            `
-                                        }).join('')}
+                                      <li>
+                                          <p class="projects__list-item-about-price-text">
+                                            Стройматериалы
+                                          </p>
+                                          <p class="projects__list-item-about-price-value">
+                                            ${item.building_materials_equipment.trim()} &#8381;
+                                          </p>
+                                      </li>
+                                      <li>
+                                          <p class="projects__list-item-about-price-text">
+                                              В базовой комплектации
+                                          </p>
+                                          <p class="projects__list-item-about-price-value">
+                                              ${item.cost_of_basic_equipment.trim()} &#8381;
+                                          </p>
+                                      </li>
                                     </ul>
                                 </header>
                             </article>
-                        </li>`
-                    }).join('')}
-                    </ul>`
-        projectListWrapper.append(div)
-    }
+                        </li>`;
+                      })
+                      .join("")}
+                    </ul>`;
+    projectListWrapper.append(div);
+  }
 }
 
-renderProjects(arrHouse,'.projects__list-wrapper')
+function projectsDetails() {
+  const buildingListItem = document.querySelectorAll(".projects__list-item-link");
+  buildingListItem.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      requestDetails(`${localStorage.getItem("url")}api/house_detail/${e.currentTarget.parentElement.dataset.id}/`);
+    });
+  });
+}
 
-renderProjects(arrLandscaping,'.projects__landscaping-list-wrapper')
+function renderDetails(data) {
+  console.log(data);
+  const porjectsWrapper = document.querySelector(".projects__wrapper");
+  porjectsWrapper.children[0].style.display = "none";
+  porjectsWrapper.children[1].style.display = "block";
+  document.querySelector(".projects__details-about-img img").setAttribute("src", data.main_photo);
+  const projectsDetailsImg = document.querySelector(".projects__details-about-img-list");
+  projectsDetailsImg.innerHTML = "";
+  createProjectsDetailsImgListItem(data.main_photo, projectsDetailsImg, 'projects__detail-about-img-list-active');
+  data.housephoto_set.map((photo) => {
+    createProjectsDetailsImgListItem(photo.photo, projectsDetailsImg);
+  });
+  document.querySelector(".projects__details-title").textContent = `Проект "${data.name}"`;
+  const projectDetailsOptions = document.querySelectorAll(".projects__details-options-list li");
+  projectDetailsOptions[0].children[1].textContent = data.material.material;
+  projectDetailsOptions[1].children[1].textContent = data.facade;
+  projectDetailsOptions[2].children[1].innerHTML = `${data.square} м<sup>2</sup>`;
+  projectDetailsOptions[3].children[1].textContent = `${data.room} ${data.bathroom} ${data.floor}`;
+  document.querySelector(".projects__details-price-value").textContent = data.cost_of_basic_equipment + " ₽";
+  document.querySelector(".projects__details-scheme-img img").setAttribute("src", data.houseplanphoto_set[0].photo);
+}
+
+function createProjectsDetailsImgListItem(src, parentElement, className) {
+  const li = document.createElement("li")
+  li.classList.add(className);
+  li.innerHTML = `<img src="${src}">`;
+  parentElement.append(li);
+
+  li.addEventListener("click", (e) => {
+    document.querySelector(".projects__details-about-img img").setAttribute("src", e.target.src);
+
+  })
+}
+
+function requestDetails(url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      renderDetails(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}

@@ -1,6 +1,6 @@
 .main__title {
     margin-top: 160px;
-    @include fonts("OpenSans", 600, 50px, 65px, $productTitleColor);
+    @include fonts("OpenSans", 600, 50px, 65px, $mainColor);
     animation: smoothly 0.7s ease;
     animation-iteration-count: 1;
 }
