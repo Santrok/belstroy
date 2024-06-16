@@ -1,7 +1,8 @@
 from django.contrib import admin
 
 from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, InfoCompany, Fact, Partner, HouseType, \
-    House, HousePlanPhoto, HouseFacadePhoto, HouseSectionPhoto, HousePhoto, SignUpForAFreeConsultation, CallBack, Improvement
+    House, HousePlanPhoto, HouseFacadePhoto, HouseSectionPhoto, HousePhoto, SignUpForAFreeConsultation, CallBack, \
+    Improvement, Review
 
 # Register your models here.
 admin.site.register(BackgroundSliderImage)
@@ -20,3 +21,4 @@ admin.site.register(HousePhoto)
 admin.site.register(SignUpForAFreeConsultation)
 admin.site.register(CallBack)
 admin.site.register(Improvement)
+admin.site.register(Review)
