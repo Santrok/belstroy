@@ -81,9 +81,8 @@ class CallBackSerializer(serializers.ModelSerializer):
         fields = ["name", "phone_number"]
 
 
-class ImprovementSerializer(serializers.Serializer):
+class ImprovementSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Improvement
-        fields = ["title", "description", "main_photo"]
-        # fields = "__all__"
+        fields = "__all__"

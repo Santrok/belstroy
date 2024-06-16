@@ -74,5 +74,6 @@ class CallBackAPIView(CreateAPIView):
 
 class ImprovementAPIView(ListAPIView):
     queryset = Improvement.objects.all()
+    print(queryset)
     serializer_class = ImprovementSerializer
 
