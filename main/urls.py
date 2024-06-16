@@ -1,6 +1,6 @@
 from django.urls import path
 
-from main.views import get_main_page, MaterialHouseAPIView, DetailHouseAPIView, ConsultationAPIView, CallBackAPIView, \
+from main.views import ImprovementDetailAPIView, get_main_page, MaterialHouseAPIView, DetailHouseAPIView, ConsultationAPIView, CallBackAPIView, \
     ImprovementAPIView
 
 urlpatterns = [
@@ -10,4 +10,5 @@ urlpatterns = [
     path('api/create_consultation/', ConsultationAPIView.as_view()),
     path('api/create_callback/', CallBackAPIView.as_view()),
     path('api/improvement/', ImprovementAPIView.as_view()),
+    path('api/improvement_detail/<int:pk>/', ImprovementDetailAPIView.as_view()),
 ]

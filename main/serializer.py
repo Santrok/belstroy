@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from main.models import House, HouseType, HousePlanPhoto, HouseFacadePhoto, HouseSectionPhoto, HousePhoto, \
+from main.models import House, HouseType, HousePlanPhoto, HouseFacadePhoto, HouseSectionPhoto, HousePhoto, ImprovementPhoto, \
     SignUpForAFreeConsultation, CallBack, Improvement
 
 
@@ -82,6 +82,22 @@ class CallBackSerializer(serializers.ModelSerializer):
 
 
 class ImprovementSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Improvement
+        fields = "__all__"
+
+
+class ImprovementPhotoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ImprovementPhoto
+        fields = "__all__"
+        
+
+
+class ImprovementDetailSerializer(serializers.ModelSerializer):
+    improvementphoto_set = ImprovementPhotoSerializer(many=True)
 
     class Meta:
         model = Improvement

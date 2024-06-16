@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from config.settings import env_keys
 from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, Fact, InfoCompany, Partner, HouseType, \
     House, SignUpForAFreeConsultation, CallBack, Improvement
-from main.serializer import HouseTypeSerializer, HouseAllSerializer, ConsultationSerializer, CallBackSerializer, \
+from main.serializer import HouseTypeSerializer, HouseAllSerializer, ConsultationSerializer, CallBackSerializer, ImprovementDetailSerializer, \
     ImprovementSerializer
 
 
@@ -76,4 +76,9 @@ class ImprovementAPIView(ListAPIView):
     queryset = Improvement.objects.all()
     print(queryset)
     serializer_class = ImprovementSerializer
+
+
+class ImprovementDetailAPIView(RetrieveAPIView):
+    queryset = Improvement.objects.all()
+    serializer_class = ImprovementDetailSerializer
 

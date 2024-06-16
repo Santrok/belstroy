@@ -1,7 +1,6 @@
 const consultationFormBtn = document.querySelector('.excursion__form button')
 const footerFormBtn = document.querySelector('.footer__form button')
 
-console.log(consultationFormBtn);
 
 function getCookie(name) {
     const cookie = document.cookie.split(";");
