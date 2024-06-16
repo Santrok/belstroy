@@ -85,4 +85,5 @@ class ImprovementSerializer(serializers.Serializer):
 
     class Meta:
         model = Improvement
-        fields = "__all__"
+        fields = ["title", "description", "main_photo"]
+        # fields = "__all__"
