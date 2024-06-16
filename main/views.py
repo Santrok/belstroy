@@ -8,7 +8,7 @@ from rest_framework.response import Response
 
 from config.settings import env_keys
 from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, Fact, InfoCompany, Partner, HouseType, \
-    House, SignUpForAFreeConsultation, CallBack, Improvement, Review
+    House, SignUpForAFreeConsultation, CallBack, Improvement, Review, Vacancy
 from main.serializer import HouseTypeSerializer, HouseAllSerializer, ConsultationSerializer, CallBackSerializer, ImprovementDetailSerializer, \
     ImprovementSerializer
 
@@ -22,6 +22,7 @@ def get_main_page(request):
     company_info = InfoCompany.objects.first()
     partners = Partner.objects.all()
     reviews = Review.objects.filter(is_publish=True)
+    vacancy = Vacancy.objects.filter(is_publish=True)
 
     context = {
         "slider_photo": slider_photo,
@@ -32,6 +33,7 @@ def get_main_page(request):
         "company_info": company_info,
         "partners": partners,
         "reviews": reviews,
+        "vacancy": vacancy,
     }
     return render(request, 'index.html', context)
 

@@ -725,6 +725,17 @@ header {
   color: #828294;
 }
 
+.projects__details-description {
+  font-family: "OpenSans";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #828294;
+}
+.projects__details-description br {
+  display: none;
+}
+
 .projects__list-item-img img {
   width: 100%;
   height: 100%;
@@ -2321,6 +2332,7 @@ header {
 .footer {
   background: url(../img/bg.jpg) no-repeat center/cover;
   padding-top: 100px;
+  margin-top: 50px;
 }
 
 .footer__title {

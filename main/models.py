@@ -164,6 +164,15 @@ class Fact(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Vacancy(models.Model):
+    title = models.CharField("Заголовок", max_length=255)
+    fact_description = models.CharField("Текст", max_length=500)
+    is_publish = models.BooleanField("Опубликовано", default=False)
+
+    def __str__(self):
+        return self.title
+    
 
 
 class AdminFact(admin.ModelAdmin):

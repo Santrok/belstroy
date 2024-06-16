@@ -73,6 +73,14 @@
   @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
 }
 
+.projects__details-description {
+  @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
+
+  & br {
+    display: none;
+  }
+}
+
 .projects__list-item-img {
   & img {
     width: 100%;
