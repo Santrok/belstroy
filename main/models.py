@@ -234,6 +234,21 @@ class AdminImprovement(admin.ModelAdmin):
             в админ панели сущности: Improvement"""
 
 
+class Review(models.Model):
+    name = models.CharField("Имя человека оставившего отзыв", max_length=255)
+    city_expert_level = models.CharField("Уровень знатока города", max_length=255)
+    description = models.TextField("Текст отзыва")
+    photo = models.ImageField("Изображение", upload_to="reviews_photo")
+    is_publish = models.BooleanField("Опубликовано", default=False)
+
+    def __str__(self):
+        return self.name
+
+class AdminReview(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: Review"""
+
+
 
 # class ImprovementPhoto(models.Model):
 #     photo = models.ImageField('Изображение')
