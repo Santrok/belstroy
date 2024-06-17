@@ -843,11 +843,11 @@ header {
 }
 
 .projects__details-about-img-wrap {
-  flex: 0 1 710px;
+  flex: 1 1 710px;
 }
 
 .projects__details-price {
-  flex: 0 1 350px;
+  flex: 1 1 350px;
 }
 
 .projects__details-about {
@@ -855,6 +855,8 @@ header {
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 80px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .projects__details-about-img {
@@ -877,10 +879,11 @@ header {
   gap: 20px;
 }
 .projects__details-about-img-list li {
-  max-width: 160px;
+  flex: 1 1 auto;
   cursor: pointer;
 }
 .projects__details-about-img-list li img {
+  max-height: 150px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1042,11 +1045,11 @@ header {
   left: 0;
 }
 
-.projects__details-scheme-img {
+.projects__details-scheme-img-wrapper {
   padding: 40px 50px 60px;
   border: 1px solid #d3deea;
 }
-.projects__details-scheme-img img {
+.projects__details-scheme-img-wrapper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1075,6 +1078,30 @@ header {
   transition: 0.3s ease;
   background: #FC6335;
   color: #fff;
+}
+
+.projects__details-facade {
+  display: none;
+  grid-template: 1fr 1fr/1fr 1fr;
+}
+.projects__details-facade li {
+  padding: 20px;
+  border: 1px solid #d3deea;
+}
+.projects__details-facade li:hover {
+  box-shadow: 0px 0px 17px rgba(203, 213, 225, 0.53);
+}
+.projects__details-facade li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.projects__details-active {
+  display: grid;
 }
 
 .projects__details-cost {
@@ -1308,6 +1335,33 @@ header {
   cursor: initial;
 }
 
+@media (max-width: 992px) {
+  .projects__details-scheme-img-wrapper {
+    padding: 0;
+  }
+  .projects__details-title {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+  .projects__details-facade {
+    grid-template: 1fr/1fr;
+  }
+  .projects__details-facade li {
+    padding: 0;
+  }
+  .projects__details-about {
+    margin: 0;
+  }
+  .projects__details-scheme {
+    margin-top: 40px;
+  }
+  .projects__list-item-about-wrapper-description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
 .projects__details-block {
   display: none;
 }

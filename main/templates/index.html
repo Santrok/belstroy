@@ -312,15 +312,19 @@
               <div class="projects__details-scheme">
                 <nav class="projects__details-scheme-nav">
                   <ul class="projects__details-nav-scheme-list">
-                    <li class="projects__details-nav-scheme-list-item projects__details-nav-scheme-list-item-active">
+                    <li class="projects__details-nav-scheme-list-item projects__details-nav-scheme-list-item-active" data-id="0">
                       Планировка
                     </li>
-                    <li class="projects__details-nav-scheme-list-item">Фасады</li>
-                    <li class="projects__details-nav-scheme-list-item">Разрез</li>
+                    <li class="projects__details-nav-scheme-list-item" data-id="1">Фасады</li>
                   </ul>
                 </nav>
-                <div class="projects__details-scheme-img">
-                  <img src="" alt="" />
+                <div class="projects__details-scheme-img-wrapper">
+                  <div class="projects__details-scheme-img">
+                    <img src="" alt="" />
+                  </div>
+                  <ul class="projects__details-facade">
+                   
+                  </ul>
                 </div>
               </div>
             </div>
@@ -774,5 +778,6 @@
     <script src="{% static "js/setUrl.js" %}"></script>
     <script src="{% static "js/forms.js" %}"></script>
     <script src="{% static "js/phoneMask.js" %}"></script>
+    <script src="{% static "js/details.js" %}"></script>
   </body>
 </html>

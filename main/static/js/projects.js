@@ -198,7 +198,6 @@ function renderDetails(data, isLandscaping = false) {
   document.querySelector(`.${projectWrapperClass} .projects__details-about-img img`).setAttribute("src", data.main_photo);
   createProjectsDetailsImgListItem(data.main_photo, detailsAboutImgList, "projects__detail-about-img-list-active");
   document.querySelector(`.${projectWrapperClass} .projects__details-title`).textContent = `Проект "${isLandscaping ? data.title : data.name}"`;
-
   if (isLandscaping) {
     data.improvementphoto_set.forEach((photo) => {
       createProjectsDetailsImgListItem(photo.photo, detailsAboutImgList, "projects__detail-about-img-list-item");
@@ -214,6 +213,11 @@ function renderDetails(data, isLandscaping = false) {
     document.querySelector(".projects__details-price-value").textContent = data.cost_of_basic_equipment + " ₽";
     const housePlanPhoto = data.houseplanphoto_set[0]?.photo || "";
     document.querySelector(".projects__details-scheme-img img").setAttribute("src", housePlanPhoto);
+    for(let i of data.housefacadephoto_set) {
+      const li = document.createElement("li");
+      li.innerHTML = `<img src="${i.photo}">`;
+      document.querySelector('.projects__details-facade').append(li)
+    }
   }
 }
 
