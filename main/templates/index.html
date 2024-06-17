@@ -683,16 +683,16 @@
           </div>
         </div>
       </section>
-      <section class="faq" id="services">
+      <section class="vacancy faq" id="services">
         <div class="container">
-          <div class="faq__wrapper">
-            <h2 class="faq__title">ВАКАНСИИ</h2>
-            <ul class="faq__list">
+          <div class="vacancy__wrapper faq__wrapper">
+            <h2 class="vacancy__title faq__title">ВАКАНСИИ</h2>
+            <ul class="vacancy__list faq__list">
                 {% for vacancy in vacancy %}
-              <li class="faq__list-item">
-                <footer class="faq__list-footer">
-                  <h3 class="faq__list-item-title">{{ vacancy.title|upper }}</h3>
-                  <div class="faq__list-item-cross">
+              <li class="vacancy__list-item faq__list-item">
+                <footer class="vacancy__list-footer faq__list-footer">
+                  <h3 class="vacancy__list-item-title faq__list-item-title">{{ vacancy.title|upper }}</h3>
+                  <div class="vacancy__list-item-cross faq__list-item-cross">
                     <svg
                       fill="#736c46"
                       viewBox="0 0 24 24"
@@ -711,8 +711,8 @@
                     </svg>
                   </div>
                 </footer>
-                <header class="faq__list-header">
-                  <p class="faq__list-item-text">
+                <header class="vacancy__list-header faq__list-header">
+                  <p class="vacancy__list-item-text faq__list-item-text">
                       {{ vacancy.fact_description }}
                   </p>
                 </header>
