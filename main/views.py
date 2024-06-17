@@ -1,7 +1,6 @@
 import telebot
 from django.shortcuts import render
 from rest_framework import status
-from rest_framework.decorators import api_view
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.response import Response
 
@@ -38,7 +37,6 @@ def send_telegram_message(message):
     chat_id = env_keys.get('BOT_CHAT_ID')
     bot = telebot.TeleBot(bot_token)
     bot.send_message(chat_id, message)
-
 
 
 class MaterialHouseAPIView(ListAPIView):
