@@ -1,7 +1,8 @@
 from rest_framework import serializers
 
-from main.models import House, HouseType, HousePlanPhoto, HouseFacadePhoto, HouseSectionPhoto, HousePhoto, ImprovementPhoto, \
+from main.models import House, HouseType, HousePlanPhoto, HouseFacadePhoto, HousePhoto, ImprovementPhoto, \
     SignUpForAFreeConsultation, CallBack, Improvement
+from main.validators import validate_phone
 
 
 class HouseSerializer(serializers.ModelSerializer):
@@ -33,12 +34,6 @@ class HouseFacadePhotoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class HouseSectionPhotoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = HouseSectionPhoto
-        fields = '__all__'
-
-
 class HousePhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = HousePhoto
@@ -54,7 +49,6 @@ class MaterialSerializer(serializers.ModelSerializer):
 class HouseAllSerializer(serializers.ModelSerializer):
     houseplanphoto_set = HousePlanPhotoSerializer(many=True)
     housefacadephoto_set = HouseFacadePhotoSerializer(many=True)
-    housesectionphoto_set = HouseSectionPhotoSerializer(many=True)
     housephoto_set = HousePhotoSerializer(many=True)
     material = MaterialSerializer()
 
@@ -63,11 +57,11 @@ class HouseAllSerializer(serializers.ModelSerializer):
         fields = ["id", "name", "room", "floor", "bathroom", "square", "facade",
                   "description", "material", "main_photo", "cost_of_basic_equipment",
                   "building_materials_equipment", "link_to_video_on_youtube",
-                  "houseplanphoto_set", "housefacadephoto_set", "housesectionphoto_set",
-                  "housephoto_set"]
+                  "houseplanphoto_set", "housefacadephoto_set", "housephoto_set"]
 
 
 class ConsultationSerializer(serializers.ModelSerializer):
+    phone_number = serializers.CharField(validators=[validate_phone])
 
     class Meta:
         model = SignUpForAFreeConsultation
@@ -75,6 +69,7 @@ class ConsultationSerializer(serializers.ModelSerializer):
 
 
 class CallBackSerializer(serializers.ModelSerializer):
+    phone_number = serializers.CharField(validators=[validate_phone])
 
     class Meta:
         model = CallBack
@@ -94,7 +89,6 @@ class ImprovementPhotoSerializer(serializers.ModelSerializer):
         model = ImprovementPhoto
         fields = "__all__"
         
-
 
 class ImprovementDetailSerializer(serializers.ModelSerializer):
     improvementphoto_set = ImprovementPhotoSerializer(many=True)

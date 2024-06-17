@@ -52,19 +52,6 @@ class HouseFacadePhotoInlines(admin.StackedInline):
     extra = 0
 
 
-class HouseSectionPhoto(models.Model):
-    photo = models.ImageField('Изображение дома в разрезе', upload_to='house_section_photos')
-    house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
-
-    def __str__(self):
-        return self.house.name
-
-
-class AdminHouseSectionPhoto(admin.ModelAdmin):
-    """Класс управления отображения
-            в админ панели сущности: HouseSectionPhoto"""
-
-
 class HousePhoto(models.Model):
     photo = models.ImageField('Изображение', upload_to='house_photos')
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
@@ -321,6 +308,9 @@ class BackgroundSliderImage(models.Model):
 class AdminBackgroundSliderImage(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: BackgroundSliderImage"""
+    def photo(self, object):
+        return mark_safe(f"<img src='{object.image.url}' width=50>")
+    list_display = ["image", "photo"]
 
 
 class ImprovementPhoto(models.Model):
@@ -329,16 +319,31 @@ class ImprovementPhoto(models.Model):
 
     class Meta:
         verbose_name = "Дополнительное изображение благоустройства"
-        verbose_name_plural = "Дополнительные изображения"
+        verbose_name_plural = "Дополнительные изображения благоустройства"
 
     def __str__(self):
         return self.improvement.title
+
+
+class AdminImprovementPhoto(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: ImprovementPhoto"""
+
+
+class ImprovementPhotoInlines(admin.StackedInline):
+    model = ImprovementPhoto
+    max_num = 10
+    extra = 0
 
 
 class Improvement(models.Model):
     title = models.CharField("Заголовок", max_length=255)
     description = models.TextField("Описание")
     main_photo = models.ImageField("Главное изображение", upload_to="improvement_main_photo")
+
+    class Meta:
+        verbose_name = "Вид работ по благоустройству"
+        verbose_name_plural = "Виды работ по благоустройству"
     
     def __str__(self):
         return self.title
@@ -347,6 +352,11 @@ class Improvement(models.Model):
 class AdminImprovement(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: Improvement"""
+    def photo(self, object):
+        return mark_safe(f"<img src='{object.main_photo.url}' width=50>")
+
+    inlines = [ImprovementPhotoInlines]
+    list_display = ["title", "photo"]
 
 
 class Review(models.Model):
@@ -356,35 +366,18 @@ class Review(models.Model):
     photo = models.ImageField("Изображение", upload_to="reviews_photo")
     is_publish = models.BooleanField("Опубликовано", default=False)
 
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
+
     def __str__(self):
         return self.name
+
 
 class AdminReview(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: Review"""
+    list_display = ["name", "is_publish"]
+    list_editable = ["is_publish"]
+    list_filter = ["is_publish"]
 
-
-
-# class ImprovementPhoto(models.Model):
-#     photo = models.ImageField('Изображение')
-#     improvement = models.ForeignKey('Благоустройство', on_delete=models.CASCADE, verbose_name='Дом')
-#
-#     def __str__(self):
-#         return self.improvement.name
-#
-#
-# class Improvement(models.Model):
-#     name = models.CharField('Название дома', max_length=500, blank=True, null=True)
-#     facade = models.CharField('Фасад', max_length=500, blank=True, null=True)
-#     square = models.CharField('Площадь', max_length=500, blank=True, null=True)
-#     room = models.CharField('Количество комнат', max_length=500, blank=True, null=True)
-#     bathroom = models.CharField('Количество санузлов', max_length=500, blank=True, null=True)
-#     floor = models.CharField('Количество этажей', max_length=500, blank=True, null=True)
-#     description = models.TextField('Описание дома', blank=True, null=True)
-#     material = models.ForeignKey('HouseType', on_delete=models.CASCADE, verbose_name='Материал стен', blank=True, null=True)
-#     main_photo = models.ImageField('Главное изображение', blank=True, null=True)
-#     cost_of_basic_equipment = models.CharField('Стоимость базовой комплектации', max_length=255, blank=True, null=True)
-#     building_materials_equipment = models.CharField("Стоимость стройматериалов", max_length=255, blank=True, null=True)
-#
-#     def __str__(self):
-#         return self.name
