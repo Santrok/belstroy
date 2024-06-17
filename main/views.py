@@ -1,15 +1,13 @@
-import telebot
-
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.response import Response
 
-from config.settings import env_keys
 from main.models import BackgroundSliderImage, SocialMedia, Contact, Rating, Fact, InfoCompany, Partner, HouseType, \
     House, SignUpForAFreeConsultation, CallBack, Improvement, Review, Vacancy
 from main.serializer import HouseTypeSerializer, HouseAllSerializer, ConsultationSerializer, CallBackSerializer, ImprovementDetailSerializer, \
     ImprovementSerializer
+from main.services import send_telegram_message
 
 
 def get_main_page(request):
@@ -37,14 +35,6 @@ def get_main_page(request):
     return render(request, 'index.html', context)
 
 
-def send_telegram_message(message):
-    """ Отправляем сообщение в чат бота """
-    bot_token = env_keys.get('BOT_TOKEN')
-    chat_id = env_keys.get('BOT_CHAT_ID')
-    bot = telebot.TeleBot(bot_token)
-    bot.send_message(chat_id, message)
-
-
 class MaterialHouseAPIView(ListAPIView):
     queryset = HouseType.objects.all()
     serializer_class = HouseTypeSerializer
@@ -59,6 +49,17 @@ class ConsultationAPIView(CreateAPIView):
     queryset = SignUpForAFreeConsultation
     serializer_class = ConsultationSerializer
 
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        message = (f'Заявка на консультацию:\n Имя: {serializer.validated_data.get("name")}\n'
+                   f'Телефон: {serializer.validated_data.get("phone_number")}\n'
+                   f' Дата консультации: {serializer.validated_data.get("date_of_consultation")}')
+        send_telegram_message(message)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
 
 class CallBackAPIView(CreateAPIView):
     queryset = CallBack
@@ -69,14 +70,14 @@ class CallBackAPIView(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
-        message = f'Имя: {serializer.validated_data.get("name")}\nТелефон: {serializer.validated_data.get("phone_number")}'
+        message = (f'Заявка на обратный звонок:\n Имя: {serializer.validated_data.get("name")}\n'
+                   f'Телефон: {serializer.validated_data.get("phone_number")}')
         send_telegram_message(message)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
 class ImprovementAPIView(ListAPIView):
     queryset = Improvement.objects.all()
-    print(queryset)
     serializer_class = ImprovementSerializer
 
 
