@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.db import models
+from django.utils.safestring import mark_safe
+
 
 # Create your models here.
 
@@ -7,6 +9,10 @@ from django.db import models
 class HousePlanPhoto(models.Model):
     photo = models.ImageField('Изображение плана дома', upload_to='house_plan_photos')
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
+
+    class Meta:
+        verbose_name = "Изображение плана проекта (дома)"
+        verbose_name_plural = "Изображения плана проекта (дома)"
 
     def __str__(self):
         return self.house.name
@@ -17,9 +23,19 @@ class AdminHousePlanPhoto(admin.ModelAdmin):
             в админ панели сущности: HousePlanPhoto"""
 
 
+class HousePlanPhotoInlines(admin.StackedInline):
+    model = HousePlanPhoto
+    max_num = 10
+    extra = 0
+
+
 class HouseFacadePhoto(models.Model):
     photo = models.ImageField('Изображение фасада дома', upload_to='house_facade_photos')
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
+
+    class Meta:
+        verbose_name = "Изображение фасада проекта (дома)"
+        verbose_name_plural = "Изображения фасадов проекта (дома)"
 
     def __str__(self):
         return self.house.name
@@ -28,6 +44,12 @@ class HouseFacadePhoto(models.Model):
 class AdminHouseFacadePhoto(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: HouseFacadePhoto"""
+
+
+class HouseFacadePhotoInlines(admin.StackedInline):
+    model = HouseFacadePhoto
+    max_num = 10
+    extra = 0
 
 
 class HouseSectionPhoto(models.Model):
@@ -47,8 +69,18 @@ class HousePhoto(models.Model):
     photo = models.ImageField('Изображение', upload_to='house_photos')
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
 
+    class Meta:
+        verbose_name = "Дополнительная фотография дома"
+        verbose_name_plural = "Дополнительные фотографии дома"
+
     def __str__(self):
         return self.house.name
+
+
+class HousePhotoInlines(admin.StackedInline):
+    model = HousePhoto
+    max_num = 10
+    extra = 0
 
 
 class AdminHousePhoto(admin.ModelAdmin):
@@ -58,6 +90,10 @@ class AdminHousePhoto(admin.ModelAdmin):
 
 class HouseType(models.Model):
     material = models.CharField('Материал стен', max_length=255)
+
+    class Meta:
+        verbose_name = "Тип дома"
+        verbose_name_plural = "Типы домов"
 
     def __str__(self):
         return self.material
@@ -82,6 +118,10 @@ class House(models.Model):
     building_materials_equipment = models.CharField("Стоимость стройматериалов", max_length=255, blank=True, null=True)
     link_to_video_on_youtube = models.CharField("Ссылка на видео в YouTub", max_length=255, blank=True, null=True)
 
+    class Meta:
+        verbose_name = "Проект дома"
+        verbose_name_plural = "Проекты домов"
+
     def __str__(self):
         return self.name
 
@@ -89,6 +129,11 @@ class House(models.Model):
 class AdminHouse(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: House"""
+    def photo(self, object):
+        return mark_safe(f"<img src='{object.main_photo.url}' width=50>")
+
+    inlines = [HousePhotoInlines, HousePlanPhotoInlines, HouseFacadePhotoInlines]
+    list_display = ["name", "material", "photo", "cost_of_basic_equipment"]
 
 
 class Contact(models.Model):
@@ -99,6 +144,10 @@ class Contact(models.Model):
     email = models.EmailField('Email', blank=True, null=True)
     phone_number = models.CharField('Номер телефона', max_length=500, blank=True, null=True)
 
+    class Meta:
+        verbose_name = "Наши контакты"
+        verbose_name_plural = "Наши контакты"
+
     def __str__(self):
         return self.address
 
@@ -106,6 +155,7 @@ class Contact(models.Model):
 class AdminContact(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: Contact"""
+    list_display = ["address", "floor", "working_days", "working_hours", "email", "phone_number"]
 
 
 class SocialMedia(models.Model):
@@ -113,6 +163,10 @@ class SocialMedia(models.Model):
     link = models.CharField("Ссылка", max_length=500, blank=True, null=True)
     phone_number = models.CharField('Номер телефона', max_length=255, blank=True, null=True)
     image = models.FileField('Иконка', upload_to='social_images')
+
+    class Meta:
+        verbose_name = "Социальная сеть"
+        verbose_name_plural = "Социальные сети"
 
     def __str__(self):
         return self.title_social_media
@@ -127,6 +181,11 @@ class Partner(models.Model):
     title_partner = models.CharField('Имя партнера', max_length=500)
     image = models.ImageField('Изображение', upload_to='partner_images')
 
+    class Meta:
+        verbose_name = "Наш партнер"
+        verbose_name_plural = "Наши партнеры"
+
+
     def __str__(self):
         return self.title_partner
 
@@ -139,6 +198,10 @@ class AdminPartner(admin.ModelAdmin):
 class Rating(models.Model):
     rating = models.CharField("Рейтинг", max_length=10)
 
+    class Meta:
+        verbose_name = "Рейтинг по отзывам на яндекс картах"
+        verbose_name_plural = "Рейтинг по отзывам на яндекс картах"
+
     def __str__(self):
         return self.rating
 
@@ -146,38 +209,61 @@ class Rating(models.Model):
 class SignUpForAFreeConsultation(models.Model):
     name = models.CharField("Имя", max_length=255)
     phone_number = models.CharField('Номер телефона', max_length=255)
-    date_of_consultation = models.DateField("Дата")
+    date_of_consultation = models.DateField("Дата консультации")
     application_processed = models.BooleanField("Заявка обработана", default=False)
 
+    class Meta:
+        verbose_name = "Заявка на консультацию"
+        verbose_name_plural = "Заявки на консультацию"
+
     def __str__(self):
-        return f'{self.name} {self.date_of_consultation} {self.phone_number}'
+        return f'{self.name}'
 
 
 class AdminSignUpForAFreeConsultation(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: SignUpForAFreeConsultation"""
+    list_display = ["name", "phone_number", "date_of_consultation", "application_processed"]
+    list_editable = ["application_processed"]
+    list_filter = ["application_processed", "date_of_consultation"]
 
 
 class Fact(models.Model):
     title = models.CharField("Заголовок", max_length=255)
     fact_description = models.CharField("Текст", max_length=500)
 
-    def __str__(self):
-        return self.title
-    
-class Vacancy(models.Model):
-    title = models.CharField("Заголовок", max_length=255)
-    fact_description = models.CharField("Текст", max_length=500)
-    is_publish = models.BooleanField("Опубликовано", default=False)
+    class Meta:
+        verbose_name = "Факт о нас"
+        verbose_name_plural = "Факты о нас"
 
     def __str__(self):
         return self.title
-    
 
 
 class AdminFact(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: Fact"""
+
+
+class Vacancy(models.Model):
+    title = models.CharField("Заголовок", max_length=255)
+    fact_description = models.CharField("Текст", max_length=500)
+    is_publish = models.BooleanField("Опубликовано", default=False)
+
+    class Meta:
+        verbose_name = "Вакансия"
+        verbose_name_plural = "Вакансии"
+
+    def __str__(self):
+        return self.title
+
+
+class AdminVacancy(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: Vacancy"""
+    list_display = ["title", "is_publish"]
+    list_editable = ["is_publish"]
+    list_filter = ["is_publish"]
 
 
 class InfoCompany(models.Model):
@@ -186,6 +272,10 @@ class InfoCompany(models.Model):
     number_of_reviews = models.IntegerField("Количество отзывов")
     the_number_of_employees = models.IntegerField("Количество сотрудников")
 
+    class Meta:
+        verbose_name = "Информация о компании"
+        verbose_name_plural = "Информация о компании"
+
     def __str__(self):
         return "Информация о компании"
 
@@ -193,6 +283,7 @@ class InfoCompany(models.Model):
 class AdminInfoCompany(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: InfoCompany"""
+    list_display = ["id", "years_on_the_market", "satisfied_clients", "number_of_reviews", "the_number_of_employees"]
 
 
 class CallBack(models.Model):
@@ -201,17 +292,28 @@ class CallBack(models.Model):
     application_date = models.DateTimeField("Дата заявки", auto_now_add=True)
     application_processed = models.BooleanField("Заявка обработана", default=False)
 
+    class Meta:
+        verbose_name = "Заявка на обратный звонок"
+        verbose_name_plural = "Заявки на обратный звонок"
+
     def __str__(self):
-        return f'{self.name} {self.phone_number}'
+        return f'{self.name}'
 
 
 class AdminCallBack(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: CallBack"""
+    list_display = ["name", "phone_number", "application_date", "application_processed"]
+    list_editable = ["application_processed"]
+    list_filter = ["application_processed", "application_date"]
 
 
 class BackgroundSliderImage(models.Model):
     image = models.ImageField('Изображение', upload_to='background_images')
+
+    class Meta:
+        verbose_name = "Изображение в карусели банера сайта"
+        verbose_name_plural = "Изображения в карусели банера сайта"
 
     def __str__(self):
         return f'{self.image}'
@@ -224,6 +326,10 @@ class AdminBackgroundSliderImage(admin.ModelAdmin):
 class ImprovementPhoto(models.Model):
     photo = models.ImageField('Изображение', upload_to="improvement_photos")
     improvement = models.ForeignKey('Improvement', on_delete=models.CASCADE, verbose_name='Благоустройство')
+
+    class Meta:
+        verbose_name = "Дополнительное изображение благоустройства"
+        verbose_name_plural = "Дополнительные изображения"
 
     def __str__(self):
         return self.improvement.title
