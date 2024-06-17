@@ -322,7 +322,7 @@ header {
 
 @media (max-width: 992px) {
   header {
-    padding-top: 100px;
+    padding-top: 75px;
   }
   .header__wrapper {
     gap: 5px;
@@ -446,7 +446,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     background: #122453;
     z-index: 10;
   }
@@ -457,7 +457,7 @@ header {
   }
   .main__nav-list-wrapper {
     position: fixed;
-    top: 89px;
+    top: 69px;
     left: 0;
     background: #122453;
     width: 100%;
@@ -2333,8 +2333,6 @@ header {
     line-height: 1.55;
     color: #122453;
   }
-}
-@media (max-width: 992px) {
   .reviews__title {
     font-size: 32px;
     margin-bottom: 40px;
@@ -2353,6 +2351,7 @@ header {
   }
   .reviews {
     font-size: 50px;
+    padding: 60px 0;
   }
 }
 .partners {
@@ -2389,15 +2388,21 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 30px;
   }
+  .partners {
+    padding: 60px 0;
+  }
+  .partners__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
 }
 .vacancy {
-  padding: 0;
+  padding: 25px 0 50px 0;
 }
 
 .footer {
   background: url(../img/bg.jpg) no-repeat center/cover;
   padding-top: 100px;
-  margin-top: 50px;
 }
 
 .footer__title {

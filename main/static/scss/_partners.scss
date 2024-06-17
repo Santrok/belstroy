@@ -29,5 +29,14 @@
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 30px;
     }
+
+    .partners{
+        padding: 60px 0;
+    }
+
+    .partners__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
 }
 
