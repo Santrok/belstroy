@@ -17,7 +17,7 @@
 
 .projects__details-about-img {
   margin-bottom: 20px;
-  
+
   & img {
     max-height: 400px;
     width: 100%;
@@ -320,110 +320,116 @@
 }
 
 .projects__details-cost-calculation-choice-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+
+  & label {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 15px;
-    margin-bottom: 15px;
 
-    & label {
-        display: flex;
-        align-items: center;
-        gap:15px;
-
-        & p {
-            @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
-        }
-
-        & input {
-            width: 20px;
-            height: 20px;
-        }
+    & p {
+      @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
     }
+
+    & input {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 
 .projects__details-cost-calculation-field-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
 
-    & input {
-        padding: 11px 18px;
-        @include fonts("OpenSans", 500, 14px, 1.25, $detailsTitleColor);
-        
-        &::placeholder {
-            @include fonts("OpenSans", 600, 14px, 1.25, gray);
-        }
+  & input {
+    padding: 11px 18px;
+    @include fonts("OpenSans", 500, 14px, 1.25, $detailsTitleColor);
+
+    &::placeholder {
+      @include fonts("OpenSans", 600, 14px, 1.25, gray);
     }
+  }
 }
 
 .project__details-cost-calculagtion-social-choice-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 35px;
+
+  & label {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 10px;
-    margin-bottom: 35px;
+  }
 
-    & label {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+  & input {
+    width: 20px;
+    height: 20px;
+  }
 
-    & input {
-        width: 20px;
-        height: 20px;
-    }
-
-    & p {
-        @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
-    }
+  & p {
+    @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
+  }
 }
 
 .project__details-cost-calculagtion-price-refresh {
-    @include fonts("OpenSans", 400, 13px, 1.55, $detailsRefreshColor);
+  @include fonts("OpenSans", 400, 13px, 1.55, $detailsRefreshColor);
 }
 
 .project__details-cost-calculagtion-btn {
-    margin-bottom: 15px;
-    display: block;
-    padding: 11px 18px;
-    background: $productTitleColor;
-    @include fonts("OpenSans", 600, 14px, 1.55, $mainColor);
-    transition: 0.3s ease;
-    width: 100%;
+  margin-bottom: 15px;
+  display: block;
+  padding: 11px 18px;
+  background: $productTitleColor;
+  @include fonts("OpenSans", 600, 14px, 1.55, $mainColor);
+  transition: 0.3s ease;
+  width: 100%;
 
-    &:hover {
-      transition: 0.3s ease;
-      background: $btnMoreHover;
-    }
+  &:hover {
+    transition: 0.3s ease;
+    background: $btnMoreHover;
+  }
 }
 
 .projects__details-cost-list-more-detailed {
-    padding: 0 42px 20px 60px;
+  padding: 0 42px 20px 60px;
 
-    & .projects__details-cost-list-item-wrap {
-        border-top: 1px solid $detailsBorderColor;
-        border-bottom: none;
-    }
+  & .projects__details-cost-list-item-wrap {
+    border-top: 1px solid $detailsBorderColor;
+    border-bottom: none;
+  }
 }
 
 .projects__details-cost-list-more-active {
-    border: none;
+  border: none;
 }
 
-
 .projects__details-cost-list-more-detailed {
-    & p {
-        @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
-    }
+  & p {
+    @include fonts("OpenSans", 400, 16px, 1.55, $defaultColor);
+  }
 
-    & .projects__details-cost-list-item-wrap {
-        cursor: initial;
-    }
+  & .projects__details-cost-list-item-wrap {
+    cursor: initial;
+  }
+}
+
+.projects__list-item-about-wrapper-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
 }
 
 @media (max-width: 992px) {
-  .projects__details-scheme-img-wrapper{
+  .projects__details-scheme-img-wrapper {
     padding: 0;
   }
   .projects__details-title {
@@ -437,7 +443,7 @@
     & li {
       padding: 0;
     }
-  } 
+  }
   .projects__details-about {
     margin: 0;
   }
@@ -447,8 +453,8 @@
   }
   .projects__list-item-about-wrapper-description {
     overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }

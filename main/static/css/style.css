@@ -1335,6 +1335,13 @@ header {
   cursor: initial;
 }
 
+.projects__list-item-about-wrapper-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
 @media (max-width: 992px) {
   .projects__details-scheme-img-wrapper {
     padding: 0;
