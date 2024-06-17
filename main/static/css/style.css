@@ -152,7 +152,7 @@ header {
 
 .header__logo {
   display: block;
-  max-width: 160px;
+  max-width: 250px;
   flex: 1 1 auto;
 }
 .header__logo img {
@@ -322,7 +322,7 @@ header {
 
 @media (max-width: 992px) {
   header {
-    padding-top: 90px;
+    padding-top: 100px;
   }
   .header__wrapper {
     gap: 5px;
@@ -570,7 +570,7 @@ header {
   font-weight: 600;
   font-size: 50px;
   line-height: 65px;
-  color: #FC6335;
+  color: #fff;
   animation: smoothly 0.7s ease;
   animation-iteration-count: 1;
 }
@@ -666,9 +666,11 @@ header {
   gap: 50px;
   overflow-y: scroll;
   height: 100svh;
+  padding-right: 10px;
 }
 
 .projects__landscaping-list-wrapper {
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -700,10 +702,12 @@ header {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  cursor: pointer;
 }
 
 .projects__list-item {
   display: flex;
+  height: 100%;
   flex-direction: column;
   gap: 25px;
   box-shadow: 0px 3px 18px 0px rgba(200, 194, 194, 0.15);
@@ -711,6 +715,25 @@ header {
 }
 .projects__list-item:hover {
   box-shadow: 0px 3px 33px 0px rgba(141, 131, 131, 0.25);
+}
+
+.projects__list-item-about-wrapper-description {
+  font-family: "OpenSans";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #828294;
+}
+
+.projects__details-description {
+  font-family: "OpenSans";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #828294;
+}
+.projects__details-description br {
+  display: none;
 }
 
 .projects__list-item-img img {
@@ -838,6 +861,7 @@ header {
   margin-bottom: 20px;
 }
 .projects__details-about-img img {
+  max-height: 400px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -863,6 +887,10 @@ header {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.projects__detail-about-img-list-active {
+  border: 3px solid #FC6335;
 }
 
 .projects__details-block-back {
@@ -911,6 +939,7 @@ header {
   font-size: 16px;
   line-height: 1.55;
   color: #000;
+  text-align: right;
 }
 
 .projects__details-prices {
@@ -933,8 +962,8 @@ header {
 
 .projects__details-price-value {
   font-family: "OpenSans";
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 1.55;
   color: #000;
 }
@@ -2303,6 +2332,7 @@ header {
 .footer {
   background: url(../img/bg.jpg) no-repeat center/cover;
   padding-top: 100px;
+  margin-top: 50px;
 }
 
 .footer__title {

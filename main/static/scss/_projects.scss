@@ -1,187 +1,198 @@
 .projects {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 .projects__title {
-    @include fonts("OpenSans", 600, 52px, 65px, $defaultColor);
-    margin-bottom: 20px;
+  @include fonts("OpenSans", 600, 52px, 65px, $defaultColor);
+  margin-bottom: 20px;
 }
 
 .projects__text {
-    @include fonts("OpenSans", 600, 18px, 1.55, $productTextColor);
-    max-width: 550px;
-    & span {
-        color: $defaultColor;
-    }
-    margin-bottom: 50px;
+  @include fonts("OpenSans", 600, 18px, 1.55, $productTextColor);
+  max-width: 550px;
+  & span {
+    color: $defaultColor;
+  }
+  margin-bottom: 50px;
 }
 
-
 .projects__list-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    overflow-y: scroll;
-    height: 100svh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  overflow-y: scroll;
+  height: 100svh;
+  padding-right: 10px;
 }
 
 .projects__landscaping-list-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    overflow-y: scroll;
-    height: 100svh;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  overflow-y: scroll;
+  height: 100svh;
 }
 
 .projects__list-building-type {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .projects__list-building-type-title {
-    @include fonts("OpenSans", 600, 42px, 1.2, $defaultColor);
+  @include fonts("OpenSans", 600, 42px, 1.2, $defaultColor);
 }
 
 .projects__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .projects__list-item-link {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
 }
 
 .projects__list-item {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    box-shadow: $boxShadowCard;
-    border: 1px solid $borderColorCard;
-    &:hover {
-        box-shadow: $boxShadowCardHover;
-    }
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: $boxShadowCard;
+  border: 1px solid $borderColorCard;
+  &:hover {
+    box-shadow: $boxShadowCardHover;
+  }
+}
+
+.projects__list-item-about-wrapper-description {
+  @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
+}
+
+.projects__details-description {
+  @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
+
+  & br {
+    display: none;
+  }
 }
 
 .projects__list-item-img {
-    & img {
-        width: 100%;
-        height: 100%;
-        max-height: 190px;
-        object-fit: cover;
-        object-position: center;
-    }
+  & img {
+    width: 100%;
+    height: 100%;
+    max-height: 190px;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .projects__list-item-title-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .projects__list-item-title {
-    @include fonts("OpenSans", 600, 22px, 1.2, $productTitleColor);
+  @include fonts("OpenSans", 600, 22px, 1.2, $productTitleColor);
 }
 
 .projects__list-item-square-km {
-    @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
+  @include fonts("OpenSans", 400, 18px, 1.55, $productTextColor);
 }
 
 .projects__list-item-title-wrap {
-    padding: 0 25px 15px 25px;
-    border-bottom: 1px solid $borderColor;
+  padding: 0 25px 15px 25px;
+  border-bottom: 1px solid $borderColor;
 }
 
 .projects__list-item-about-wrapper {
-    padding: 0 25px 25px 25px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+  padding: 0 25px 25px 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .projects__list-item-about-list {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 
-    & li {
-        @include fonts("OpenSans", 400, 14px, 1.55, $productTextColor);
-    }
+  & li {
+    @include fonts("OpenSans", 400, 14px, 1.55, $productTextColor);
+  }
 }
 
 .projects__list-item-about-price-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .projects__list-item-about-price-text {
-    @include fonts("OpenSans", 400, 14px, 1.55, $productTextColor);
-    text-align: end;
+  @include fonts("OpenSans", 400, 14px, 1.55, $productTextColor);
+  text-align: end;
 }
 
 .projects__list-item-about-price-value {
-    @include fonts("OpenSans", 600, 16px, 1.55, $defaultColor);
-    text-align: end;
+  @include fonts("OpenSans", 600, 16px, 1.55, $defaultColor);
+  text-align: end;
 }
 
 .projects__list-wrapper-more-btn {
-    padding: 11px 18px;
-    background: $productTitleColor;
-    color: $mainColor;
-    @include fonts("OpenSans", 600, 14px, 1.55, $mainColor);
-    margin: 0  auto;
-    width: 100%;
-    max-width: 180px;
-    transition: .3s ease;
-    display: block;
-    margin: 50px auto 0 auto;
+  padding: 11px 18px;
+  background: $productTitleColor;
+  color: $mainColor;
+  @include fonts("OpenSans", 600, 14px, 1.55, $mainColor);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 180px;
+  transition: 0.3s ease;
+  display: block;
+  margin: 50px auto 0 auto;
 
-    &:hover {
-        transition: .3s ease;
-        background: $btnMoreHover;
-    }
+  &:hover {
+    transition: 0.3s ease;
+    background: $btnMoreHover;
+  }
 }
-
-
-
-
 
 .projects__start-block {
-    display: block;
+  display: block;
 }
 
-@import './projectsDetails';
+@import "./projectsDetails";
 
 .projects__details-block {
-    display: none;
+  display: none;
 }
 
-@media (max-width:992px) {
-    .projects__title {
-        font-size: 32px;
-        line-height: 40px;
-    }
-    .projects__text {
-        font-size: 16px;
-    }
+@media (max-width: 992px) {
+  .projects__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .projects__text {
+    font-size: 16px;
+  }
 
-    .projects__list-building-type-title {
-        font-size: 26px;
-    }
+  .projects__list-building-type-title {
+    font-size: 26px;
+  }
 
-    .projects__list-item-title {
-        font-size: 18px;
-    }
+  .projects__list-item-title {
+    font-size: 18px;
+  }
 
-    .projects__list-item-square-km {
-        font-size: 16px;
-    }
-    
-    .projects__list {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
+  .projects__list-item-square-km {
+    font-size: 16px;
+  }
+
+  .projects__list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }

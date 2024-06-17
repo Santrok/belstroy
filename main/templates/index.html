@@ -9,7 +9,7 @@
     <title>Агенство недвижимости ЭлитБелСтрой</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" data-url="{{ url }}">
       <div class="modals">
         <div class="review__modal">
           <div class="review__modal-author"></div>
@@ -146,7 +146,7 @@
             <div class="container">
               <div class="header__wrapper">
                 <a href="#" class="header__logo">
-                  <img src="{% static "img/logo.png" %}" alt="logo" />
+                  <img src="{% static "img/logo(2).png" %}" alt="logo" />
                 </a>
                 <div class="header__rating">
                   <div class="header__bookmark-img">
@@ -205,6 +205,9 @@
                       <li class="main__nav-list-item">
                         <a href="#contacts">Контакты</a>
                       </li>
+                      <li class="main__nav-list-item">
+                        <a href="#vacancy">Вакансии</a>
+                      </li>
                     </ul>
                     <div class="main__nav-list-social">
                       <a href="#">
@@ -262,7 +265,7 @@
         <div class="container">
           <div class="projects__wrapper">
             <div class="projects__start-block">
-              <h2 class="projects__title">Проекты по строительству</h2>
+              <h2 class="projects__title">Каркасное домостроение</h2>
               <p class="projects__text">
                 Детально проработанные проекты с <span>подробными сметами</span> и проверенные технадзором на
                 соответствие ГОСТам
@@ -271,54 +274,38 @@
               <button type="button" class="projects__list-wrapper-more-btn">Показать еще</button>
             </div>
             <div class="projects__details-block">
-              <p class="projects__details-block-back">&#8592; Вернутся назад</p>
+              <p class="projects__details-block-back">&#8592; Вернуться назад</p>
               <div class="projects__details-about">
                 <div class="projects__details-about-img-wrap">
                   <div class="projects__details-about-img">
-                    <img src="./img/card_photo_1.jpg" alt="" />
+                    <img src="" alt="" />
                   </div>
                   <ul class="projects__details-about-img-list">
-                    <li>
-                      <img src="./img/card_photo_2.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_3.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_4.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_5.jpg" alt="" />
-                    </li>
                   </ul>
                 </div>
                 <div class="projects__details-price">
-                  <h2 class="projects__details-title">Проект «Поллукс»</h2>
+                  <h2 class="projects__details-title"></h2>
                   <ul class="projects__details-options-list">
                     <li class="projects__details-options-list-item">
                       <h3>Материал стен</h3>
-                      <p>Каркасные</p>
+                      <p></p>
                     </li>
                     <li class="projects__details-options-list-item">
                       <h3>Фасад</h3>
-                      <p>HAUBERK</p>
+                      <p></p>
                     </li>
                     <li class="projects__details-options-list-item">
                       <h3>Общая площадь</h3>
-                      <p>50.4 м2</p>
+                      <p></p>
                     </li>
                     <li class="projects__details-options-list-item">
                       <h3>Планировка</h3>
-                      <p>1 Комната 1 санузел 1 этаж</p>
+                      <p></p>
                     </li>
                   </ul>
                   <div class="projects__details-prices">
                     <p class="projects__details-price-text">Стоимость базовой комплектации:</p>
-                    <p class="projects__details-price-value">2 686 872 ₽</p>
-                  </div>
-                  <div class="projects__details-actions">
-                    <a href="#"> Подробная смета </a>
-                    <button>Скачать проект</button>
+                    <p class="projects__details-price-value"></p>
                   </div>
                 </div>
               </div>
@@ -333,87 +320,7 @@
                   </ul>
                 </nav>
                 <div class="projects__details-scheme-img">
-                  <img src="./img/detailsImg_1.jpg" alt="" />
-                </div>
-                <div class="projects__details-scheme-button-download">Скачать проект</div>
-              </div>
-              <div class="projects__details-cost">
-                <h3 class="projects__details-cost-title">Стоимость</h3>
-                <div class="projects__details-cost-block">
-                  <ul class="projects__details-cost-list">
-                    <li class="projects__details-cost-list-item">
-                      <div class="projects__details-cost-list-item-wrap projects__details-cost-list-more-active">
-                        <div class="projects__details-cost-list-item-title-wrap">
-                          <input type="checkbox" name="" id="" />
-                          <h4>1. Подготовка участка. Материал.</h4>
-                        </div>
-                        <div class="projects__details-cost-list-item-price-wrap">
-                          <p>59 407,20 ₽</p>
-                          <div class="projects__details-cost-list-item-price-chevron">
-                            <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
-                                fill="none"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <ul class="projects__details-cost-list-more-detailed">
-                        <li class="projects__details-cost-list-more-detailed-item">
-                          <div class="projects__details-cost-list-item-wrap">
-                            <div class="projects__details-cost-list-item-title-wrap">
-                              <input type="checkbox" name="" id="" />
-                              <h5>1.1 Подготовка участка. Материал.</h5>
-                            </div>
-                            <div class="projects__details-cost-list-item-price-wrap">
-                              <p>59 407,20 ₽</p>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <form class="projects__details-cost-calculation">
-                    <div class="projects__details-cost-calculation-title-wrap">
-                      <p>Итого:</p>
-                      <p>2 686 872 ₽</p>
-                    </div>
-                    <div class="projects__details-cost-calculation-choice-wrap">
-                      <label for="calcMaterial&Work">
-                        <input type="radio" name="calcMaterial" id="calcMaterial&Work" />
-                        <p>Материал и работа</p>
-                      </label>
-                      <label for="calcMaterial">
-                        <input type="radio" name="calcMaterial" id="calcMaterial" />
-                        <p>Только материалы</p>
-                      </label>
-                    </div>
-                    <div class="projects__details-cost-calculation-field-wrap">
-                      <input type="text" name="" id="" placeholder="Имя" />
-                      <input type="tel" name="" id="" placeholder="Телефон" />
-                    </div>
-                    <div class="project__details-cost-calculagtion-social-choice-wrap">
-                      <label for="socialChoiceTg">
-                        <input type="radio" name="socialChoice" id="socialChoiceTg" />
-                        <p>Телеграм</p>
-                      </label>
-                      <label for="socialChoiceWA">
-                        <input type="radio" name="socialChoice" id="socialChoiceWA" />
-                        <p>WhatsApp</p>
-                      </label>
-                    </div>
-                    <button class="project__details-cost-calculagtion-btn">Рассчитать с доставкой</button>
-                    <p class="project__details-cost-calculagtion-price-refresh">
-                      Всегда актуальные цены на материалы. Обновлено 12:12 06 июня 2024 г.
-                    </p>
-                  </form>
+                  <img src="" alt="" />
                 </div>
               </div>
             </div>
@@ -422,9 +329,9 @@
       </section>
       <section class="projects" id="projectsLandscaping">
         <div class="container">
-          <div class="projects__wrapper">
+          <div class="projects__landscaping-wrapper">
             <div class="projects__start-block">
-              <h2 class="projects__title">Проекты по благоустройству</h2>
+              <h2 class="projects__title">Благоустройство придомовой территории</h2>
               <p class="projects__text">
                 Детально проработанные проекты с <span>подробными сметами</span> и проверенные технадзором на
                 соответствие ГОСТам
@@ -437,146 +344,16 @@
               <div class="projects__details-about">
                 <div class="projects__details-about-img-wrap">
                   <div class="projects__details-about-img">
-                    <img src="./img/card_photo_1.jpg" alt="" />
+                    <img src="" alt="" />
                   </div>
                   <ul class="projects__details-about-img-list">
-                    <li>
-                      <img src="./img/card_photo_2.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_3.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_4.jpg" alt="" />
-                    </li>
-                    <li>
-                      <img src="./img/card_photo_5.jpg" alt="" />
-                    </li>
                   </ul>
                 </div>
                 <div class="projects__details-price">
                   <h2 class="projects__details-title">Проект «Поллукс»</h2>
-                  <ul class="projects__details-options-list">
-                    <li class="projects__details-options-list-item">
-                      <h3>Материал стен</h3>
-                      <p>Каркасные</p>
-                    </li>
-                    <li class="projects__details-options-list-item">
-                      <h3>Фасад</h3>
-                      <p>HAUBERK</p>
-                    </li>
-                    <li class="projects__details-options-list-item">
-                      <h3>Общая площадь</h3>
-                      <p>50.4 м2</p>
-                    </li>
-                    <li class="projects__details-options-list-item">
-                      <h3>Планировка</h3>
-                      <p>1 Комната 1 санузел 1 этаж</p>
-                    </li>
-                  </ul>
-                  <div class="projects__details-prices">
-                    <p class="projects__details-price-text">Стоимость базовой комплектации:</p>
-                    <p class="projects__details-price-value">2 686 872 ₽</p>
-                  </div>
-                  <div class="projects__details-actions">
-                    <a href="#"> Подробная смета </a>
-                    <button>Скачать проект</button>
-                  </div>
                 </div>
               </div>
-              <div class="projects__details-scheme">
-                <nav class="projects__details-scheme-nav">
-                  <ul class="projects__details-nav-scheme-list">
-                    <li class="projects__details-nav-scheme-list-item projects__details-nav-scheme-list-item-active">
-                      Планировка
-                    </li>
-                    <li class="projects__details-nav-scheme-list-item">Фасады</li>
-                    <li class="projects__details-nav-scheme-list-item">Разрез</li>
-                  </ul>
-                </nav>
-                <div class="projects__details-scheme-img">
-                  <img src="./img/detailsImg_1.jpg" alt="" />
-                </div>
-                <div class="projects__details-scheme-button-download">Скачать проект</div>
-              </div>
-              <div class="projects__details-cost">
-                <h3 class="projects__details-cost-title">Стоимость</h3>
-                <div class="projects__details-cost-block">
-                  <ul class="projects__details-cost-list">
-                    <li class="projects__details-cost-list-item">
-                      <div class="projects__details-cost-list-item-wrap projects__details-cost-list-more-active">
-                        <div class="projects__details-cost-list-item-title-wrap">
-                          <input type="checkbox" name="" id="" />
-                          <h4>1. Подготовка участка. Материал.</h4>
-                        </div>
-                        <div class="projects__details-cost-list-item-price-wrap">
-                          <p>59 407,20 ₽</p>
-                          <div class="projects__details-cost-list-item-price-chevron">
-                            <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
-                                fill="none"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <ul class="projects__details-cost-list-more-detailed">
-                        <li class="projects__details-cost-list-more-detailed-item">
-                          <div class="projects__details-cost-list-item-wrap">
-                            <div class="projects__details-cost-list-item-title-wrap">
-                              <input type="checkbox" name="" id="" />
-                              <h5>1.1 Подготовка участка. Материал.</h5>
-                            </div>
-                            <div class="projects__details-cost-list-item-price-wrap">
-                              <p>59 407,20 ₽</p>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <form class="projects__details-cost-calculation">
-                    <div class="projects__details-cost-calculation-title-wrap">
-                      <p>Итого:</p>
-                      <p>2 686 872 ₽</p>
-                    </div>
-                    <div class="projects__details-cost-calculation-choice-wrap">
-                      <label for="calcMaterial&Work">
-                        <input type="radio" name="calcMaterial" id="calcMaterial&Work" />
-                        <p>Материал и работа</p>
-                      </label>
-                      <label for="calcMaterial">
-                        <input type="radio" name="calcMaterial" id="calcMaterial" />
-                        <p>Только материалы</p>
-                      </label>
-                    </div>
-                    <div class="projects__details-cost-calculation-field-wrap">
-                      <input type="text" name="" id="" placeholder="Имя" />
-                      <input type="tel" name="" id="" placeholder="Телефон" />
-                    </div>
-                    <div class="project__details-cost-calculagtion-social-choice-wrap">
-                      <label for="socialChoiceTg">
-                        <input type="radio" name="socialChoice" id="socialChoiceTg" />
-                        <p>Телеграм</p>
-                      </label>
-                      <label for="socialChoiceWA">
-                        <input type="radio" name="socialChoice" id="socialChoiceWA" />
-                        <p>WhatsApp</p>
-                      </label>
-                    </div>
-                    <button class="project__details-cost-calculagtion-btn">Рассчитать с доставкой</button>
-                    <p class="project__details-cost-calculagtion-price-refresh">
-                      Всегда актуальные цены на материалы. Обновлено 12:12 06 июня 2024 г.
-                    </p>
-                  </form>
-                </div>
+              <div class="projects__details-description">
               </div>
             </div>
           </div>
@@ -594,9 +371,9 @@
                 <li class="excursion__text-list-item"><span>ЗАДАДИТЕ</span>ВОПРОСЫ РУКОВОДИТЕЛЮ СТРОИТЕЛЬСТВА</li>
               </ul>
               <form class="excursion__form">
-                <input type="text" name="" id="" placeholder="Имя" />
-                <input type="tel" name="" id="" placeholder="Телефон" />
-                <input type="date" name="" id="" placeholder="Желаемая дата экскурсии" />
+                <input type="text" name="name" id="" placeholder="Имя" />
+                <input type="tel" name="phone_number" id="" placeholder="Телефон" />
+                <input type="date" name="date_of_consultation" id="" placeholder="Желаемая дата экскурсии" />
                 <button type="button">Отправить</button>
               </form>
               <p class="excursion__model-politic politic">
@@ -670,7 +447,7 @@
       <section class="steps" id="steps">
         <div class="container">
           <div class="seps__wrapper">
-            <h2 class="steps__title"><span>ПОСМОТРИТЕ НА 6 ЭТАПОВ</span>, КАК БУДЕТ СТРОИТЬСЯ ВАШ ИДЕАЛЬНЫЙ ДОМ</h2>
+            <h2 class="steps__title"><span>ЭТАПЫ СОТРУДНИЧЕСТВА</span></h2>
             <div class="steps__list-wrapper">
               <ul class="steps__tab-list">
                 <li class="steps__tab-list-item steps__tab-list-item-active" data-step-index="0">этап 1</li>
@@ -690,13 +467,13 @@
                     <p>Что входит в 1-й этап:</p>
                     <ul class="steps__list-item-text-list">
                       <li>
-                        <p><span>Консультация</span> по выбору материала строительства;</p>
+                        <p><span>Знакомство</span> с руководителями компании;</p>
                       </li>
                       <li>
-                        <p><span>Подбор</span> проекта дома при необходимости;</p>
+                        <p><span>Консультация</span> по выбору материала;</p>
                       </li>
                       <li>
-                        <p>Предварительный <span>расчет</span> строительства.</p>
+                        <p>Предварительный <span>расчет.</span></p>
                       </li>
                     </ul>
                     <p class="steps__list-item-annotation">
@@ -707,151 +484,128 @@
                 </li>
                 <li class="steps__list-item">
                   <div class="steps__list-item-img">
-                    <img src="{% static "img/steps_2.jpeg" %}" alt="" />
+                    <img src="{% static "img/steps_2.jpg" %}" alt="" />
                   </div>
                   <div class="steps__list-item-text-wrap">
-                    <h3>ЕСЛИ НУЖЕН ПРОЕКТ, ВЫБИРАЕМ ИЗ ТИПОВЫХ ИЛИ РАЗРАБАТЫВАЕМ ИНДИВИДУАЛЬНЫЙ</h3>
-                    <p>Что входит в проект: <span>записка;</span></p>
+                    <h3>СОГЛАСОВЫВАЕМ С ВАМИ СМЕТУ И ЗАКЛЮЧАЕМ ДОГОВОР</h3>
+                    <p>ЧЧто входит в этот <span>этап:</span></p>
                     <ul class="steps__list-item-text-list">
                       <li>
-                        <p><span>Схема</span> планировочной организации с расположением дома;</p>
+                        <p><span>Выезд</span> специалиста на объект;</p>
                       </li>
                       <li>
-                        <p>Дополнительных построек, скважины, септика;</p>
+                        <p>Согласование проекта;</p>
                       </li>
                       <li>
-                        <p>Поэтажные планы с расстановкой мебели;</p>
+                        <p>Расчет стоимости работ, материалов и сроков выполнения.</p>
                       </li>
                       <li>
-                        <p><span>Фасады</span> в цвете с высотными отметками;</p>
-                      </li>
-                      <li>
-                        <p>Реалистичные перспективные <span>виды дома</span> со всех сторон.</p>
+                        <p>Заключение <span>договора.</span></p>
                       </li>
                     </ul>
                     <p class="steps__list-item-annotation">
-                      <strong>!&nbsp;</strong> Так же возможна переделка типового проекта под ваши пожелания
+                      <strong>!&nbsp;</strong> Второй этап вносит ясность в бюджет строительства и дает гарантии на последующую эксплуатацию
                     </p>
                   </div>
                 </li>
                 <li class="steps__list-item">
                   <div class="steps__list-item-img">
-                    <img src="{% static "img/steps_3.jpeg" %}" alt="" />
+                    <img src="{% static "img/steps_3.jpg" %}" alt="" />
                   </div>
                   <div class="steps__list-item-text-wrap">
-                    <h3>ЗАЛИВКА ФУНДАМЕНТА. НАЧАЛО СТРОИТЕЛЬСТВА</h3>
+                    <h3>ПОДГОТОВИТЕЛЬНЫЕ РАБОТЫ. НАЧАЛО СТРОИТЕЛЬСТВА</h3>
                     <p>Какие работы производятся:</p>
                     <ul class="steps__list-item-text-list">
                       <li>
-                        <p><span>Разметка фундамента</span> после планировки участка;</p>
+                        <p><span>Разметка и планировка</span> участка;</p>
                       </li>
                       <li>
-                        <p><span>Земляные работы</span> (копка траншеи или котлована);</p>
+                        <p><span>Земляные работы</span></p>
                       </li>
                       <li>
-                        <p><span>Монтаж</span> опалубки и арматурных каркасов;</p>
-                      </li>
-                      <li>
-                        <p><span>Заливка</span> стен фундамента бетоном;</p>
-                      </li>
-                      <li>
-                        <p><span>Демонтаж</span> опалубки;</p>
-                      </li>
-                      <li>
-                        <p>Обратная <span>засыпка</span> грунта.</p>
+                        <p><span>Обратная</span> засыпка грунта.</p>
                       </li>
                     </ul>
                     <p class="steps__list-item-annotation">
-                      <strong>!&nbsp;</strong> Заливка фундамента - это самый тяжелый и ответственный этап строительства
+                      <strong>!&nbsp;</strong> Подготовительные работы - это самый тяжелый и ответственный этап строительства. Так как от этого этапа зависит срок эксплуатации
                       дома.
                     </p>
                   </div>
                 </li>
                 <li class="steps__list-item">
                   <div class="steps__list-item-img">
-                    <img src="{% static "img/steps_4.jpeg" %}" alt="" />
+                    <img src="{% static "img/steps_4.jpg" %}" alt="" />
                   </div>
                   <div class="steps__list-item-text-wrap">
-                    <h3>ВОЗВЕДЕНИЕ СТЕН</h3>
-                    <p>Что входит в работы:</p>
+                    <h3>МОНТАЖ ИНЖЕНЕРНЫХ КОММУНИКАЦИЙ</h3>
+                    <p>Какие работы производятся:</p>
                     <ul class="steps__list-item-text-list">
                       <li>
                         <p>
-                          <span>Каркасный дом;</span>
+                          <span>Прокладка</span> электрических сетей, освещения;
                         </p>
                       </li>
                       <li>
-                        <p><span>Из блоков</span> (газобенон, арболит, керамоблоки);</p>
+                        <p><span>Монтаж</span>  ливневой системы и системы закрытого дренажа;</p>
                       </li>
                       <li>
-                        <p><span>Из бревна</span> (отцилиндрованное, ручной руби);</p>
-                      </li>
-                      <li>
-                        <p>
-                          <span>Из кирпича;</span>
-                        </p>
-                      </li>
-                      <li>
-                        <p>
-                          <span>Из СИП - панелей.</span>
-                        </p>
+                        <p><span>Монтаж септика</span> и водоснабжения.</p>
                       </li>
                     </ul>
                     <p class="steps__list-item-annotation">
-                      <strong>!&nbsp;</strong> В зависимости от от материала стен будет зависит стоимость и сроки
-                      строительства коробки дома.
+                      <strong>!&nbsp;</strong> Грамотная разработка проекта позволяет провести работы на стадий пред чистового монтажа.
                     </p>
                   </div>
                 </li>
                 <li class="steps__list-item">
                   <div class="steps__list-item-img">
-                    <img src="{% static "img/steps_5.jpeg" %}" alt="" />
+                    <img src="{% static "img/steps_5.jpg" %}" alt="" />
                   </div>
                   <div class="steps__list-item-text-wrap">
-                    <h3>УСТАНОВКА КРЫШИ</h3>
-                    <p>Что входит в работы:</p>
+                    <h3>ЧИСТОВЫЕ МОНТАЖНЫЕ РАБОТЫ</h3>
+                    <p>Какие работы производятся:</p>
                     <ul class="steps__list-item-text-list">
                       <li>
                         <p>
-                          <span>Установка</span> стропильной системыдля выбранного вариантакрыши( двухскатная,
-                          вальмовая, мансардная и др.);
+                          <span>Монтаж</span> чистовых покрытий; 
                         </p>
                       </li>
                       <li>
-                        <p><span>Монтаж</span> изоляционного слоя кровли;</p>
+                        <p><span>Уборка и вывоз</span> строительного мусора;</p>
                       </li>
                       <li>
                         <p>
-                          <span>Монтаж</span> кровельного материала ( металлочерепица, мягкая кровля, фальцевая кровля и
-                          др.)
+                          <span>Подготовка объекта</span> к сдаче заказчику.
                         </p>
                       </li>
                     </ul>
                     <p class="steps__list-item-annotation">
-                      <strong>!&nbsp;</strong> Обращаем ваше внимание, что сроки и стоимость монтажа кровли зависят от
-                      цены и сложности конструкции.
+                      <strong>!&nbsp;</strong> Благодаря соблюдении порядка выполнения работ по этапам, монтаж всех чистовых покрытий получается выполнить в быстрые сроки с максимальным качеством работ
                     </p>
                   </div>
                 </li>
                 <li class="steps__list-item">
                   <div class="steps__list-item-img">
-                    <img src="{% static "img/steps_6.jpeg" %}" alt="" />
+                    <img src="{% static "img/steps_6.jpg" %}" alt="" />
                   </div>
                   <div class="steps__list-item-text-wrap">
-                    <h3>ВНЕШНЯЯ ОТДЕЛКА</h3>
-                    <p>Что входит в работы:</p>
+                    <h3>СДАЧА ОБЪЕКТА</h3>
+                    <p>Какие работы производятся:</p>
                     <ul class="steps__list-item-text-list">
                       <li>
                         <p>
-                          <span>Установка окон;</span>
+                          Устранение всех <span>недостатков</span> обнаруженных нашим техническим надзором;
                         </p>
                       </li>
                       <li>
-                        <p><span>Фасадные работы</span> (вариант фасада)</p>
+                        <p><span>Подписание актов</span> выполненных работ;</p>
+                      </li>
+                      <li>
+                        <p><span>Консультация заказчика</span> по вопросам гарантии.</p>
                       </li>
                     </ul>
                     <p class="steps__list-item-annotation">
-                      <strong>!&nbsp;</strong> Работы по отделке - это финальная фаза во время возведения дома.
+                      <strong>!&nbsp;</strong> За счет качественно выполненных работ нашей компанией, каждому заказчику мы предоставляем гарантию на работы 5 лет.
                     </p>
                   </div>
                 </li>
@@ -889,64 +643,28 @@
           <div class="reviews__wrapper">
             <h2 class="reviews__title">У НАС ТОЛЬКО РЕАЛЬНЫЕ ОТЗЫВЫ</h2>
             <ul class="reviews__list">
-              <li class="reviews__list-item">
-                <footer class="revies__list-item-title-wrap">
-                  <h3>ELENA</h3>
-                  <p>Знаток города 2 уровня</p>
-                </footer>
-                <header class="reviews__text">
-                  <p>
-                    Хочу выразить огромную благодарность риелтору Ольге, ипотечному брокеру Михаилу и юристу Лилии за их
-                    проделанную работу☺️👍С момента обращения до успешной сделки прошло чуть больше месяца. Очень
-                    довольна результатом. Профессионалы своего дела, рекомендую!!!
-                  </p>
-                </header>
-                <div class="reviews__list-item-more">
-                  <span>.</span>
-                  <span>.</span>
-                  <span>.</span>
-                </div>
-              </li>
-              <li class="reviews__list-item">
-                <footer class="revies__list-item-title-wrap">
-                  <h3>НАСТЯ ИВАНОВА</h3>
-                  <p>Знаток города 5 уровня</p>
-                </footer>
-                <header class="reviews__text">
-                  <p>
-                    Хочу выразить огромную благодарность вашему агентству Арбат. И отдельное спасибо моему риелтору
-                    Лолите и юристу Диние . Очень быстро помогли продать комнату . Сделка была не простая но специалисты
-                    Арбата справились с ней на раз два . Желаю и в дальнейшем вам побольше довольных клиентов, спасибо
-                    огромное с уважением Анастасия.
-                  </p>
-                </header>
-                <div class="reviews__list-item-more">
-                  <span>.</span>
-                  <span>.</span>
-                  <span>.</span>
-                </div>
-              </li>
-              <li class="reviews__list-item">
-                <footer class="revies__list-item-title-wrap">
-                  <h3>АЛЛА ЛУКОЯНОВА</h3>
-                  <p>Знаток города 4 уровня</p>
-                </footer>
-                <header class="reviews__text">
-                  <p>
-                    С агенством "Арбат " , самым лучшим агенством города, судьба меня связывает не раз , а именно с
-                    риэлтором Татьяной Федотовой, профессионалом своего дела , порядочной , выдержанной , культурной
-                    женщиной , которая всегда выслушает и поможет в любой ситуации , благодаря своей компетентности и
-                    знания дела, она всегда защищает обе стороны , чтобы было всем хорошо , ненавязчиво , а с правом
-                    выбора , одним словом умница - красавица! Так же хочется отметить грамотного юриста Снежанну,
-                    располагающего к себе человека с первых слов ! Девчата - молодцы ! Дальнейшего вам процветания!
-                  </p>
-                </header>
-                <div class="reviews__list-item-more">
-                  <span>.</span>
-                  <span>.</span>
-                  <span>.</span>
-                </div>
-              </li>
+              {% for review in reviews %}
+                <li class="reviews__list-item">
+                  <footer class="revies__list-item-title-wrap">
+                    <h3>
+                      {{ review.name }}
+                    </h3>
+                    <p>
+                      {{ review.city_expert_level }}
+                    </p>
+                  </footer>
+                  <header class="reviews__text">
+                    <p>
+                      {{ review.description }}
+                    </p>
+                  </header>
+                  <div class="reviews__list-item-more">
+                    <span>.</span>
+                    <span>.</span>
+                    <span>.</span>
+                  </div>
+                </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -959,6 +677,45 @@
                 {% for partner in partners %}
               <li class="partners__list-item">
                 <img src="{{ partner.image.url }}" alt="{{ partner.title_partner }}" />
+              </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="faq" id="services">
+        <div class="container">
+          <div class="faq__wrapper">
+            <h2 class="faq__title">ВАКАНСИИ</h2>
+            <ul class="faq__list">
+                {% for vacancy in vacancy %}
+              <li class="faq__list-item">
+                <footer class="faq__list-footer">
+                  <h3 class="faq__list-item-title">{{ vacancy.title|upper }}</h3>
+                  <div class="faq__list-item-cross">
+                    <svg
+                      fill="#736c46"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="plus"
+                      class="icon glyph"
+                      stroke="#736c46"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                </footer>
+                <header class="faq__list-header">
+                  <p class="faq__list-item-text">
+                      {{ vacancy.fact_description }}
+                  </p>
+                </header>
               </li>
                 {% endfor %}
             </ul>
@@ -995,7 +752,7 @@
             </div>
             <div class="footer__bottom">
               <div class="footer__logo">
-                <img src="{% static "/img/logo.png" %}" alt="" />
+                <img src="{% static "/img/logo(2).png" %}" alt="" />
               </div>
               <a href="#" class="footer__politic"> Политика конфиденциальности </a>
               <a href="#" class="footer__develop"> Разработка </a>
@@ -1014,7 +771,8 @@
     <script src="{% static "/js/reviewsModal.js" %}"></script>
     <script src="{% static "/js/burger.js" %}"></script>
     <script src="{% static "/js/social.js" %}"></script>
-    <script src="{% static "/js/projectsDetails.js" %}"></script>
     <script src="{% static "js/successModal.js" %}"></script>
+    <script src="{% static "js/setUrl.js" %}"></script>
+    <script src="{% static "/js/forms.js" %}"></script>
   </body>
 </html>

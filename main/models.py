@@ -164,6 +164,15 @@ class Fact(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Vacancy(models.Model):
+    title = models.CharField("Заголовок", max_length=255)
+    fact_description = models.CharField("Текст", max_length=500)
+    is_publish = models.BooleanField("Опубликовано", default=False)
+
+    def __str__(self):
+        return self.title
+    
 
 
 class AdminFact(admin.ModelAdmin):
@@ -210,6 +219,45 @@ class BackgroundSliderImage(models.Model):
 class AdminBackgroundSliderImage(admin.ModelAdmin):
     """Класс управления отображения
             в админ панели сущности: BackgroundSliderImage"""
+
+
+class ImprovementPhoto(models.Model):
+    photo = models.ImageField('Изображение', upload_to="improvement_photos")
+    improvement = models.ForeignKey('Improvement', on_delete=models.CASCADE, verbose_name='Благоустройство')
+
+    def __str__(self):
+        return self.improvement.title
+
+
+class Improvement(models.Model):
+    title = models.CharField("Заголовок", max_length=255)
+    description = models.TextField("Описание")
+    main_photo = models.ImageField("Главное изображение", upload_to="improvement_main_photo")
+    
+    def __str__(self):
+        return self.title
+
+
+class AdminImprovement(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: Improvement"""
+
+
+class Review(models.Model):
+    name = models.CharField("Имя человека оставившего отзыв", max_length=255)
+    city_expert_level = models.CharField("Уровень знатока города", max_length=255)
+    description = models.TextField("Текст отзыва")
+    photo = models.ImageField("Изображение", upload_to="reviews_photo")
+    is_publish = models.BooleanField("Опубликовано", default=False)
+
+    def __str__(self):
+        return self.name
+
+class AdminReview(admin.ModelAdmin):
+    """Класс управления отображения
+            в админ панели сущности: Review"""
+
+
 
 # class ImprovementPhoto(models.Model):
 #     photo = models.ImageField('Изображение')
