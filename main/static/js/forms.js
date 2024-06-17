@@ -26,19 +26,16 @@ consultationFormBtn.addEventListener("click", () => {
     body: data,
   })
     .then((resp) => {
-      console.log(resp);
       if (resp.status === 200 || resp.status === 201) {
         successModal.classList.add("success__modal-active");
         document.body.style.overflow = "hidden";
       } else return resp.json();
     })
     .then((message) => {
-        console.log(message);
       throw new Error(JSON.stringify(message));
     })
     .catch((error) => {
       for (let i in JSON.parse(error.message)) {
-        console.log(i);
         const errorFields = document.querySelector(`.excursion__form input[name="${i}"]`);
         errorFields.style.borderColor = "red";
         errorFields.addEventListener("input", () => {
@@ -62,11 +59,29 @@ successModalCross.addEventListener("click", () => {
 
 footerFormBtn.addEventListener("click", () => {
   const data = new FormData(document.querySelector(".footer__form"));
-  fetch(`${localStorage.getItem("url")}api/consultation/`, {
+  fetch(`${localStorage.getItem("url")}api/create_callback/`, {
     method: "POST",
     headers: {
       "X-CSRFToken": getCookie("csrftoken"),
     },
     body: data,
+  })
+  .then((resp) => {
+    if (resp.status === 200 || resp.status === 201) {
+      successModal.classList.add("success__modal-active");
+      document.body.style.overflow = "hidden";
+    } else return resp.json();
+  })
+  .then((message) => {
+    throw new Error(JSON.stringify(message));
+  })
+  .catch((error) => {
+    for (let i in JSON.parse(error.message)) {
+      const errorFields = document.querySelector(`.footer__form input[name="${i}"]`);
+      errorFields.style.borderColor = "red";
+      errorFields.addEventListener("input", () => {
+        errorFields.style.borderColor = "#122453";
+      });
+    }
   });
 });

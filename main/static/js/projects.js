@@ -13,7 +13,7 @@ async function  requestProjects() {
       }
     })
     .catch((error) => {
-      console.log(error);
+      new Error(error);
     });
 }
 
@@ -171,7 +171,7 @@ function renderLandscaping(arr, className) {
  * @return {void} This function does not return anything.
  */
 function projectsDetails(url, className) {
-  if (typeof className !== "string" && typeof url !== "string") return console.log("Error, check your arguments");
+  if (typeof className !== "string" && typeof url !== "string") return 
   const buildingListItem = document.querySelectorAll(className);
   buildingListItem.forEach((item) => {
     item.addEventListener("click", (e) => {
@@ -256,6 +256,6 @@ function requestDetails(url) {
       }
     })
     .catch((error) => {
-      console.log(error);
+      new Error(error);
     });
 }
