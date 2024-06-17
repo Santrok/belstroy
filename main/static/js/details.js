@@ -1,6 +1,5 @@
 const detailsNavListItem = document.querySelectorAll('.projects__details-nav-scheme-list-item')
 const additionalItem = document.querySelector('.projects__details-scheme-img-wrapper').children
-console.log(additionalItem);
 detailsNavListItem.forEach(item => {
     item.addEventListener('click', () => {
         detailsNavListItem.forEach(el => {
