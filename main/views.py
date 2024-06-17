@@ -58,7 +58,7 @@ class ConsultationAPIView(CreateAPIView):
                    f'Телефон: {serializer.validated_data.get("phone_number")}\n'
                    f' Дата консультации: {serializer.validated_data.get("date_of_consultation")}')
         send_telegram_message(message)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        return Response(status=status.HTTP_201_CREATED, headers=headers)
 
 
 class CallBackAPIView(CreateAPIView):
@@ -73,7 +73,7 @@ class CallBackAPIView(CreateAPIView):
         message = (f'Заявка на обратный звонок:\n Имя: {serializer.validated_data.get("name")}\n'
                    f'Телефон: {serializer.validated_data.get("phone_number")}')
         send_telegram_message(message)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        return Response(status=status.HTTP_201_CREATED, headers=headers)
 
 
 class ImprovementAPIView(ListAPIView):
