@@ -1,0 +1,25 @@
+.invite {
+    padding-bottom: 25px;
+}
+
+.invite__title {
+    @include fonts("OpenSans", 600, 50px, 60px, $secondColor);
+    text-transform: uppercase;
+    margin-bottom: 34px;
+}
+
+.invite__photo {
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        max-height: 600px;
+    }
+}
+
+@media(max-width:992px) {
+    .invite {
+        padding-bottom: 50px;
+    }
+}

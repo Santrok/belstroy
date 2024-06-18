@@ -258,6 +258,7 @@ class InfoCompany(models.Model):
     satisfied_clients = models.IntegerField("Довольных клиентов")
     number_of_reviews = models.IntegerField("Количество отзывов")
     the_number_of_employees = models.IntegerField("Количество сотрудников")
+    photo_ours_employer = models.ImageField("Фото наших сотрудников", blank=True, null=True)
 
     class Meta:
         verbose_name = "Информация о компании"
