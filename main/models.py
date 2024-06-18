@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.safestring import mark_safe
 
@@ -7,7 +8,12 @@ from django.utils.safestring import mark_safe
 
 
 class HousePlanPhoto(models.Model):
-    photo = models.ImageField('Изображение плана дома', upload_to='house_plan_photos')
+    photo = models.FileField('Изображение плана дома',
+                              upload_to='house_plan_photos',
+                              help_text='Изображение должно быть в формате avif, '
+                                        'преобразовать можно '
+                                        '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                              validators=[FileExtensionValidator(['avif'])])
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
 
     class Meta:
@@ -30,7 +36,12 @@ class HousePlanPhotoInlines(admin.StackedInline):
 
 
 class HouseFacadePhoto(models.Model):
-    photo = models.ImageField('Изображение фасада дома', upload_to='house_facade_photos')
+    photo = models.FileField('Изображение фасада дома',
+                             upload_to='house_facade_photos',
+                             help_text='Изображение должно быть в формате avif, '
+                                       'преобразовать можно '
+                                       '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                             validators=[FileExtensionValidator(['avif'])])
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
 
     class Meta:
@@ -53,7 +64,12 @@ class HouseFacadePhotoInlines(admin.StackedInline):
 
 
 class HousePhoto(models.Model):
-    photo = models.ImageField('Изображение', upload_to='house_photos')
+    photo = models.FileField('Изображение',
+                              upload_to='house_photos',
+                              help_text='Изображение должно быть в формате avif, '
+                                        'преобразовать можно '
+                                        '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                              validators=[FileExtensionValidator(['avif'])])
     house = models.ForeignKey('House', on_delete=models.CASCADE, verbose_name='Дом')
 
     class Meta:
@@ -100,7 +116,13 @@ class House(models.Model):
     floor = models.CharField('Количество этажей', max_length=500, blank=True, null=True)
     description = models.TextField('Описание дома', blank=True, null=True)
     material = models.ForeignKey('HouseType', on_delete=models.CASCADE, verbose_name='Материал стен', blank=True, null=True)
-    main_photo = models.ImageField('Главное изображение', upload_to='house_main_photos', blank=True, null=True)
+    main_photo = models.FileField('Главное изображение',
+                                   upload_to='house_main_photos',
+                                   blank=True, null=True,
+                                   help_text='Изображение должно быть в формате avif, '
+                                             'преобразовать можно '
+                                             '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                                   validators=[FileExtensionValidator(['avif'])])
     cost_of_basic_equipment = models.CharField('Стоимость базовой комплектации', max_length=255, blank=True, null=True)
     building_materials_equipment = models.CharField("Стоимость стройматериалов", max_length=255, blank=True, null=True)
     link_to_video_on_youtube = models.CharField("Ссылка на видео в YouTub", max_length=255, blank=True, null=True)
@@ -258,7 +280,12 @@ class InfoCompany(models.Model):
     satisfied_clients = models.IntegerField("Довольных клиентов")
     number_of_reviews = models.IntegerField("Количество отзывов")
     the_number_of_employees = models.IntegerField("Количество сотрудников")
-    photo_ours_employer = models.ImageField("Фото наших сотрудников", blank=True, null=True)
+    photo_ours_employer = models.FileField("Фото наших сотрудников",
+                                           blank=True, null=True,
+                                           help_text='Изображение должно быть в формате avif, '
+                                                     'преобразовать можно '
+                                                     '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                                           validators=[FileExtensionValidator(['avif'])])
 
     class Meta:
         verbose_name = "Информация о компании"
@@ -297,7 +324,11 @@ class AdminCallBack(admin.ModelAdmin):
 
 
 class BackgroundSliderImage(models.Model):
-    image = models.ImageField('Изображение', upload_to='background_images')
+    image = models.FileField('Изображение', upload_to='background_images',
+                             help_text='Изображение должно быть в формате avif, '
+                                       'преобразовать можно '
+                                       '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                             validators=[FileExtensionValidator(['avif'])])
 
     class Meta:
         verbose_name = "Изображение в карусели банера сайта"
@@ -305,6 +336,7 @@ class BackgroundSliderImage(models.Model):
 
     def __str__(self):
         return f'{self.image}'
+
 
 class AdminBackgroundSliderImage(admin.ModelAdmin):
     """Класс управления отображения
@@ -315,7 +347,12 @@ class AdminBackgroundSliderImage(admin.ModelAdmin):
 
 
 class ImprovementPhoto(models.Model):
-    photo = models.ImageField('Изображение', upload_to="improvement_photos")
+    photo = models.FileField('Изображение',
+                             upload_to="improvement_photos",
+                             help_text='Изображение должно быть в формате avif, '
+                                       'преобразовать можно '
+                                       '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                             validators=[FileExtensionValidator(['avif'])])
     improvement = models.ForeignKey('Improvement', on_delete=models.CASCADE, verbose_name='Благоустройство')
 
     class Meta:
@@ -340,7 +377,12 @@ class ImprovementPhotoInlines(admin.StackedInline):
 class Improvement(models.Model):
     title = models.CharField("Заголовок", max_length=255)
     description = models.TextField("Описание")
-    main_photo = models.ImageField("Главное изображение", upload_to="improvement_main_photo")
+    main_photo = models.FileField("Главное изображение",
+                                  upload_to="improvement_main_photo",
+                                  help_text='Изображение должно быть в формате avif, '
+                                            'преобразовать можно '
+                                            '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                                  validators=[FileExtensionValidator(['avif'])])
 
     class Meta:
         verbose_name = "Вид работ по благоустройству"
@@ -364,7 +406,12 @@ class Review(models.Model):
     name = models.CharField("Имя человека оставившего отзыв", max_length=255)
     city_expert_level = models.CharField("Уровень знатока города", max_length=255)
     description = models.TextField("Текст отзыва")
-    photo = models.ImageField("Изображение", upload_to="reviews_photo")
+    photo = models.FileField("Изображение",
+                             upload_to="reviews_photo",
+                             help_text='Изображение должно быть в формате avif, '
+                                       'преобразовать можно '
+                                       '<a href="https://imagetostl.com/ru/convert/file/jpg/to/avif" target="_blank">тут</a>',
+                             validators=[FileExtensionValidator(['avif'])])
     is_publish = models.BooleanField("Опубликовано", default=False)
 
     class Meta:
