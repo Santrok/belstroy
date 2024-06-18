@@ -73,6 +73,24 @@
     display: none;
 }
 
+.reviews__list-item-title-img-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}   
+
+.reviews__list-item-title-img {
+    width: 48px;
+    height: 48px;
+    & img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
 @media (max-width: 992px) {
     .reviews__list-item {
         padding: 30px;

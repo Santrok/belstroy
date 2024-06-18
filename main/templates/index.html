@@ -650,12 +650,18 @@
               {% for review in reviews %}
                 <li class="reviews__list-item">
                   <footer class="revies__list-item-title-wrap">
-                    <h3>
-                      {{ review.name }}
-                    </h3>
+                    <div class="reviews__list-item-title-img-wrap">
+                      <h3>
+                        {{ review.name }}
+                      </h3>
+                      <div class="reviews__list-item-title-img">
+                        <img src="{{ review.photo.url }}" alt="">
+                      </div>
+                    </div>
                     <p>
                       {{ review.city_expert_level }}
                     </p>
+
                   </footer>
                   <header class="reviews__text">
                     <p>
