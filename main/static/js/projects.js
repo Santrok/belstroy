@@ -194,6 +194,7 @@ function projectsDetails(url, className) {
  * @return {void}
  */
 function renderDetails(data, isLandscaping = false) {
+  window.scrollBy(0, document.querySelector(`.${isLandscaping ? "projects__landscaping-wrapper" : "projects__wrapper"}`).getBoundingClientRect().top - 40)
   const projectsWrapper = document.querySelector(`.${isLandscaping ? "projects__landscaping-wrapper" : "projects__wrapper"}`);
   const projectWrapperClass = projectsWrapper.classList.value;
   projectsWrapper.children[0].style.display = "none";
