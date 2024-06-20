@@ -18,7 +18,7 @@ consultationFormBtn.addEventListener("click", () => {
   const form = document.querySelector(".excursion__form");
   const data = new FormData(form);
 
-  fetch(`${localStorage.getItem("url")}api/create_consultation/`, {
+  fetch(`${window.location.href}api/create_consultation/`, {
     method: "POST",
     headers: {
       "X-CSRFToken": getCookie("csrftoken"),
@@ -29,6 +29,7 @@ consultationFormBtn.addEventListener("click", () => {
       if (resp.status === 200 || resp.status === 201) {
         successModal.classList.add("success__modal-active");
         document.body.style.overflow = "hidden";
+        form.reset();
       } else return resp.json();
     })
     .then((message) => {
@@ -59,7 +60,7 @@ successModalCross.addEventListener("click", () => {
 
 footerFormBtn.addEventListener("click", () => {
   const data = new FormData(document.querySelector(".footer__form"));
-  fetch(`${localStorage.getItem("url")}api/create_callback/`, {
+  fetch(`${window.location.href}api/create_callback/`, {
     method: "POST",
     headers: {
       "X-CSRFToken": getCookie("csrftoken"),
@@ -70,6 +71,7 @@ footerFormBtn.addEventListener("click", () => {
     if (resp.status === 200 || resp.status === 201) {
       successModal.classList.add("success__modal-active");
       document.body.style.overflow = "hidden";
+      document.querySelector(".footer__form").reset();
     } else return resp.json();
   })
   .then((message) => {
