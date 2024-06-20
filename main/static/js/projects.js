@@ -1,4 +1,5 @@
-const urls = [`${localStorage.getItem("url")}api/material/`, `${localStorage.getItem("url")}api/improvement/`];
+const urls = [`${window.location.href}api/material/`, `${window.location.href}api/improvement/`];
+
 /**
  * Request projects data from multiple URLs and render the projects on the webpage.
  *
