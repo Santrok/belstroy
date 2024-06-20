@@ -124,6 +124,11 @@ function renderHouses(arr, className) {
     projectListWrapper.append(div);
     projectsDetails("api/house_detail/", ".projects__houses");
   }
+  
+  Array.from(document.querySelectorAll(".projects__list-wrapper-more-btn")).forEach((item) => {
+    item.style.display = `${arr.length > 6 ? "block" : "none"}`;
+  })
+  
 }
 
 /**
@@ -152,9 +157,9 @@ function renderLandscaping(arr, className) {
               </footer>
           </div>
           <header class="projects__list-item-about-wrapper">
-          <p class="projects__list-item-about-wrapper-description">
-            ${i.description}
-          </p>
+            <p class="projects__list-item-about-wrapper-description">
+              ${i.description}
+            </p>
           </header>
       </article>
   </li>`;
@@ -213,6 +218,7 @@ function renderDetails(data, isLandscaping = false) {
     document.querySelector(".projects__details-price-value").textContent = data.cost_of_basic_equipment + " ₽";
     const housePlanPhoto = data.houseplanphoto_set[0]?.photo || "";
     document.querySelector(".projects__details-scheme-img img").setAttribute("src", housePlanPhoto);
+    document.querySelector('.projects__details-facade').innerHTML = "";
     for(let i of data.housefacadephoto_set) {
       const li = document.createElement("li");
       li.innerHTML = `<img src="${i.photo}">`;

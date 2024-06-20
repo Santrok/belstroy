@@ -11,7 +11,7 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 80px;
-  gap: 20px;
+  gap: 35px;
   flex-wrap: wrap;
 }
 
@@ -34,8 +34,7 @@
   gap: 20px;
 
   & li {
-    flex: 1 1 auto;
-    // max-width: 160px;
+    flex: 0 1 200px;
     cursor: pointer;
     & img {
       max-height: 150px;
