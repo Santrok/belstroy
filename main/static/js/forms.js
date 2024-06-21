@@ -33,7 +33,7 @@ consultationFormBtn.addEventListener("click", () => {
       } else return resp.json();
     })
     .then((message) => {
-      throw new Error(JSON.stringify(message));
+      if(message !== undefined) throw new Error(JSON.stringify(message))
     })
     .catch((error) => {
       for (let i in JSON.parse(error.message)) {
