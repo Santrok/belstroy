@@ -1762,6 +1762,9 @@ header {
   .excursion__form input {
     max-width: none;
   }
+  .excursion__form label {
+    max-width: none;
+  }
   .excursion__text-list li {
     flex-wrap: wrap;
     font-size: 16px;
