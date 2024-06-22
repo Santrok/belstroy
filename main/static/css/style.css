@@ -1714,6 +1714,19 @@ header {
   line-height: 1.55;
   color: #828294;
 }
+.excursion__form label {
+  width: 100%;
+  max-width: 270px;
+}
+.excursion__form [type=date] {
+  background: url(../img/icons/calendar_2.webp) 97% 50% no-repeat;
+}
+.excursion__form [type=date]::-webkit-inner-spin-button {
+  display: none;
+}
+.excursion__form [type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
 .excursion__form button {
   padding: 5px 15px;
   border-radius: 30px;
